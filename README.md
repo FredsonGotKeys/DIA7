@@ -27,13 +27,14 @@ Instalar dependências:
 pip install -r requirements.txt
 ```
 
-## 2. Substituir a foto real
+## 2. Foto de perfil
 
-O ficheiro `index.html` referencia `foto.jpg` no avatar. Coloque a foto
-real de Fredson Muianga na raiz do projecto com esse nome exacto
-(formato quadrado, mínimo 200x200px é recomendado). Enquanto o ficheiro
-não existir, o avatar mostra automaticamente as iniciais "FM" sobre
-fundo verde escuro.
+O ficheiro `index.html` referencia `foto.jpg` no avatar — já incluído
+na raiz do projecto com a foto real de Fredson Muianga (1080x1080px).
+Para substituir por outra foto, basta gravar a nova imagem por cima de
+`foto.jpg` (formato quadrado, mínimo 200x200px é recomendado). Caso o
+ficheiro seja removido ou não carregue, o avatar mostra automaticamente
+as iniciais "FM" sobre fundo verde escuro.
 
 ## 3. Ver a página localmente
 

@@ -9,6 +9,7 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import base64
 import re
 import shutil
 import sys
@@ -150,12 +151,32 @@ def injectar_meta_tags(html: str, site_url: str, image_url: str) -> str:
     return html_final
 
 
+def _foto_data_uri() -> str | None:
+    """Lê foto.jpg e devolve-a como data URI base64 para incorporar no OG image.
+
+    Returns:
+        Data URI "data:image/jpeg;base64,..." ou None se o ficheiro não existir.
+    """
+    foto_path = BASE_DIR / "foto.jpg"
+    if not foto_path.exists():
+        return None
+    with open(foto_path, "rb") as fh:
+        codificado = base64.b64encode(fh.read()).decode("ascii")
+    return f"data:image/jpeg;base64,{codificado}"
+
+
 def gerar_og_image_html(site_url: str) -> None:
     """Gera og-image.html: página 1200x630 para screenshot como imagem OG.
 
     Args:
         site_url: URL final do site (mostrado no rodapé da imagem).
     """
+    foto_uri = _foto_data_uri()
+    if foto_uri:
+        foto_bloco = f'<img src="{foto_uri}" alt="" class="photo">'
+    else:
+        foto_bloco = '<div class="photo photo-fallback">FM</div>'
+
     conteudo = f"""<!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -177,53 +198,61 @@ def gerar_og_image_html(site_url: str) -> None:
     width: 1200px;
     height: 630px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 80px;
+    gap: 64px;
+    padding: 0 90px;
   }}
-  .avatar {{
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+  .photo {{
+    flex-shrink: 0;
+    width: 260px;
+    height: 260px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: top center;
+    border: 1px solid #D8CBB4;
+  }}
+  .photo-fallback {{
     background: #16332B;
     color: #E9E2D3;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 32px;
+    font-size: 5rem;
   }}
+  .text {{ min-width: 0; }}
   h1 {{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 5rem;
-    letter-spacing: 6px;
+    font-size: 4.4rem;
+    line-height: 0.98;
+    letter-spacing: 3px;
     color: #211A13;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }}
   p.tagline {{
     font-family: 'Lora', serif;
     font-style: italic;
-    font-size: 1.7rem;
+    font-size: 1.55rem;
     color: #55483A;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }}
   p.footer {{
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #93816D;
+    color: #A8431E;
+    font-weight: 500;
   }}
 </style>
 </head>
 <body>
   <div class="stage">
-    <div class="avatar">FM</div>
-    <h1>FREDSON MUIANGA</h1>
-    <p class="tagline">Conselheiro · Consultor · Empresário · Filantropo</p>
-    <p class="footer">{site_url}</p>
+    {foto_bloco}
+    <div class="text">
+      <h1>FREDSON<br>MUIANGA</h1>
+      <p class="tagline">Conselheiro · Consultor · Empresário · Filantropo</p>
+      <p class="footer">{site_url}</p>
+    </div>
   </div>
 </body>
 </html>

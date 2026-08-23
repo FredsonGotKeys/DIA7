@@ -29,9 +29,9 @@ INDEX_FILE = BASE_DIR / "index.html"
 BACKUP_FILE = BASE_DIR / "index.html.bak"
 OG_IMAGE_HTML = BASE_DIR / "og-image.html"
 
-OG_TITLE = "Fredson Muianga — Empreendedor · Mentor · Palestrante"
+OG_TITLE = "Fredson Muianga — Conselheiro · Consultor · Empresário · Filantropo"
 OG_DESCRIPTION = (
-    "Fundador da SonhoEuropa, Bolada e ADIEP. "
+    "Fundador da SonhoEuropa, Muianga Carreiras e ADIEP. "
     "Consultoria, Mentoria e Educação Digital em Maputo, Moçambique."
 )
 
@@ -169,7 +169,7 @@ def gerar_og_image_html(site_url: str) -> None:
   html, body {{
     width: 1200px;
     height: 630px;
-    background: #F2EDE6;
+    background: #E9E2D3;
     font-family: 'DM Sans', sans-serif;
     overflow: hidden;
   }}
@@ -187,8 +187,8 @@ def gerar_og_image_html(site_url: str) -> None:
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background: #1A3A2A;
-    color: #F2EDE6;
+    background: #16332B;
+    color: #E9E2D3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,21 +200,21 @@ def gerar_og_image_html(site_url: str) -> None:
     font-family: 'Bebas Neue', sans-serif;
     font-size: 5rem;
     letter-spacing: 6px;
-    color: #1A1714;
+    color: #211A13;
     margin-bottom: 14px;
   }}
   p.tagline {{
     font-family: 'Lora', serif;
     font-style: italic;
     font-size: 1.7rem;
-    color: #4A4540;
+    color: #55483A;
     margin-bottom: 24px;
   }}
   p.footer {{
     font-size: 1.1rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #8A837C;
+    color: #93816D;
   }}
 </style>
 </head>
@@ -222,7 +222,7 @@ def gerar_og_image_html(site_url: str) -> None:
   <div class="stage">
     <div class="avatar">FM</div>
     <h1>FREDSON MUIANGA</h1>
-    <p class="tagline">Empreendedor · Mentor · Palestrante</p>
+    <p class="tagline">Conselheiro · Consultor · Empresário · Filantropo</p>
     <p class="footer">{site_url}</p>
   </div>
 </body>

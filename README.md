@@ -74,7 +74,7 @@ python update_links.py --listar
 
 Projectos suportados por `--project`:
 `SonhoEuropa`, `Muianga Consultores`, `ADIEP`, `Mentoria Elite`,
-`Michele e Banda`, `Fundação Muianga`, `Escola Seiva da Nação`,
+`Artes e Cultura`, `Fundação Muianga`, `Escola Seiva da Nação`,
 `Muianga Carreiras`.
 
 ## 5. Gerar as meta tags Open Graph após o deploy (`generate_og.py`)
@@ -125,6 +125,6 @@ uma pré-visualização correcta.
 - **Muianga Carreiras**: https://muiangacarreiras.vercel.app/ (CVs e vagas de emprego)
 
 Os restantes projectos (Muianga Consultores, ADIEP, Mentoria
-Elite, Michele e Banda, Fundação Muianga, Escola Seiva da Nação) têm
+Elite, Artes e Cultura, Fundação Muianga, Escola Seiva da Nação) têm
 link `#` como placeholder — actualize-os com `update_links.py --project`
 assim que os sites/páginas estiverem disponíveis.

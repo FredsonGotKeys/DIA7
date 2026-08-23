@@ -41,7 +41,7 @@ PROJECT_NAMES = [
     "Muianga Consultores",
     "ADIEP",
     "Mentoria Elite",
-    "Michele e Banda",
+    "Artes e Cultura",
     "Fundação Muianga",
     "Escola Seiva da Nação",
     "Muianga Carreiras",
@@ -211,21 +211,30 @@ def actualizar_projecto(html: str, nome: str, url: str) -> str:
         console.print(Panel(f"[red]Projecto desconhecido: {nome}\nDisponíveis: {', '.join(PROJECT_NAMES)}[/red]"))
         sys.exit(1)
 
-    # Cada card fecha no primeiro "</a>" que encontra, por isso o .*? não-guloso
+    # Cada card fecha no primeiro "</details>" que encontra, por isso o .*? não-guloso
     # nunca ultrapassa os limites do próprio card (evita cruzar para o card seguinte).
-    card_pattern = re.compile(r'<a class="project-card".*?</a>', re.DOTALL)
+    card_pattern = re.compile(r'<details class="project-card">.*?</details>', re.DOTALL)
     h3_pattern = re.compile(r"<h3>" + re.escape(nome) + r"</h3>")
-    href_pattern = re.compile(r'(href=")([^"]*)(")')
+    link_pattern = re.compile(r'(<a class="project-link"[^>]*href=")([^"]*)(")')
+    more_close_pattern = re.compile(r'(</div>\s*</details>)')
 
     encontrado = False
 
     def substituir_card(match: re.Match) -> str:
         nonlocal encontrado
         card = match.group(0)
-        if h3_pattern.search(card):
-            encontrado = True
-            return href_pattern.sub(lambda m: f"{m.group(1)}{url}{m.group(3)}", card, count=1)
-        return card
+        if not h3_pattern.search(card):
+            return card
+        encontrado = True
+
+        if link_pattern.search(card):
+            return link_pattern.sub(lambda m: f"{m.group(1)}{url}{m.group(3)}", card, count=1)
+
+        novo_link = (
+            f'\n          <a class="project-link" href="{url}" target="_blank" rel="noopener noreferrer">'
+            f'Visitar site <i data-lucide="arrow-up-right"></i></a>\n        '
+        )
+        return more_close_pattern.sub(lambda m: novo_link + m.group(1), card, count=1)
 
     novo_html = card_pattern.sub(substituir_card, html)
     if not encontrado:

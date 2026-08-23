@@ -1,7 +1,7 @@
 # Fredson Muianga — Link-in-Bio
 
 Landing page pessoal estilo "link-in-bio", estética editorial magazine,
-para Fredson Muianga — Empreendedor, Mentor e Palestrante moçambicano
+para Fredson Muianga — Conselheiro, Consultor, Empresário e Filantropo moçambicano
 baseado em Maputo.
 
 ## Estrutura de ficheiros
@@ -73,7 +73,7 @@ python update_links.py --listar
 ```
 
 Projectos suportados por `--project`:
-`SonhoEuropa`, `Bolada`, `Muianga Consultores`, `ADIEP`, `Mentoria Elite`,
+`SonhoEuropa`, `Muianga Consultores`, `ADIEP`, `Mentoria Elite`,
 `Michele e Banda`, `Fundação Muianga`, `Escola Seiva da Nação`,
 `Muianga Carreiras`.
 
@@ -124,7 +124,7 @@ uma pré-visualização correcta.
 - **SonhoEuropa**: https://sonhoeuropapp.vercel.app/
 - **Muianga Carreiras**: https://muiangacarreiras.vercel.app/ (CVs e vagas de emprego)
 
-Os restantes projectos (Bolada, Muianga Consultores, ADIEP, Mentoria
+Os restantes projectos (Muianga Consultores, ADIEP, Mentoria
 Elite, Michele e Banda, Fundação Muianga, Escola Seiva da Nação) têm
 link `#` como placeholder — actualize-os com `update_links.py --project`
 assim que os sites/páginas estiverem disponíveis.

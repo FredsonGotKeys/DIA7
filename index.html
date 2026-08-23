@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Fredson Muianga — Empreendedor · Mentor · Palestrante">
-<meta property="og:description" content="Fundador da SonhoEuropa, Bolada e ADIEP. Consultoria, Mentoria e Educação Digital em Maputo, Moçambique.">
+<meta property="og:title" content="Fredson Muianga — Conselheiro · Consultor · Empresário · Filantropo">
+<meta property="og:description" content="Fundador da SonhoEuropa, Muianga Carreiras e ADIEP. Consultoria, Mentoria e Educação Digital em Maputo, Moçambique.">
 <meta property="og:image" content="https://dia-7-roan.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -14,18 +14,16 @@
 <meta property="og:site_name" content="Fredson Muianga">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fredson Muianga — Empreendedor · Mentor · Palestrante">
-<meta name="twitter:description" content="Fundador da SonhoEuropa, Bolada e ADIEP. Consultoria, Mentoria e Educação Digital em Maputo, Moçambique.">
+<meta name="twitter:title" content="Fredson Muianga — Conselheiro · Consultor · Empresário · Filantropo">
+<meta name="twitter:description" content="Fundador da SonhoEuropa, Muianga Carreiras e ADIEP. Consultoria, Mentoria e Educação Digital em Maputo, Moçambique.">
 <meta name="twitter:image" content="https://dia-7-roan.vercel.app/og-image.png">
 
-
-<!-- ═══════════════ OPEN GRAPH / TWITTER CARDS ═══════════════ -->
-<meta name="description" content="Fredson Muianga — Empreendedor, Mentor e Palestrante moçambicano. Fundador da SonhoEuropa, Bolada, ADIEP e Muianga Consultores.">
+<meta name="description" content="Fredson Muianga — Conselheiro, Consultor, Empresário e Filantropo moçambicano. Fundador da SonhoEuropa, Muianga Carreiras, ADIEP e Muianga Consultores.">
 <meta name="author" content="Fredson Muianga">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fredson Muianga — Empreendedor · Mentor · Palestrante</title>
+<title>Fredson Muianga — Conselheiro · Consultor · Empresário · Filantropo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,19 +31,16 @@
 
 <style>
   :root {
-    --bg: #F2EDE6;
-    --ink: #1A1714;
-    --ink2: #4A4540;
-    --muted: #8A837C;
+    --bg: #E9E2D3;
+    --ink: #211A13;
+    --ink2: #55483A;
+    --muted: #93816D;
     --card: #FFFFFF;
-    --card-border: #D9D2C8;
-    --tag-bg: #EAE4DC;
-    --accent-green: #1A3A2A;
-    --accent-red: #C04B2D;
-    --accent-blue: #2B4A6F;
-    --accent-olive: #6B7B3A;
-    --accent-brown: #7B4F2E;
-    --status: #2DC071;
+    --card-border: #D8CBB4;
+    --tag-bg: #DED0B4;
+    --accent: #A8431E;
+    --accent-ink: #16332B;
+    --status: #2DA968;
   }
 
   * { box-sizing: border-box; }
@@ -72,64 +67,55 @@
 
   section, header { animation: fadeUp 0.5s ease both; }
 
-  header.hero    { animation-delay: 0.0s; }
+  header.hero      { animation-delay: 0.0s; }
   section.socials  { animation-delay: 0.1s; }
   section.contacts { animation-delay: 0.15s; }
   section.services { animation-delay: 0.2s; }
   section.projects { animation-delay: 0.25s; }
-  section.cta       { animation-delay: 0.3s; }
+  section.cta      { animation-delay: 0.3s; }
 
   /* ── HERO ── */
-  header.hero {
-    text-align: center;
-  }
-
-  .avatar-wrap {
+  .hero-photo {
     position: relative;
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 1.1rem;
+    width: calc(100% + 2.5rem);
+    margin: -2.25rem -1.25rem 0;
+    height: 280px;
+    overflow: hidden;
   }
 
-  .avatar-fallback {
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    background: var(--accent-green);
-    color: var(--bg);
+  .hero-photo img,
+  .hero-photo .avatar-fallback {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: flex;
+    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 92%);
+    mask-image: linear-gradient(to bottom, #000 40%, transparent 92%);
+  }
+
+  .hero-photo .avatar-fallback {
+    background: var(--accent-ink);
+    color: var(--bg);
     align-items: center;
     justify-content: center;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.9rem;
-    letter-spacing: 1px;
+    font-size: 4.5rem;
+    letter-spacing: 2px;
   }
 
-  .avatar-img {
-    position: absolute;
-    inset: 0;
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--card-border);
-  }
-
-  .status-dot {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--status);
-    border: 2px solid var(--bg);
+  .identity-block {
+    position: relative;
+    margin-top: -3.4rem;
+    margin-bottom: 1.1rem;
   }
 
   h1.name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.4rem;
-    letter-spacing: 3px;
+    font-size: 2.7rem;
+    line-height: 0.95;
+    letter-spacing: 2px;
     margin: 0 0 0.35rem;
     color: var(--ink);
   }
@@ -138,83 +124,115 @@
     font-family: 'Lora', serif;
     font-style: italic;
     font-weight: 400;
-    font-size: 1.02rem;
+    font-size: 1rem;
     color: var(--ink2);
-    margin: 0 0 0.9rem;
+    margin: 0 0 0.6rem;
   }
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .tag {
-    background: var(--tag-bg);
-    color: var(--ink2);
-    border-radius: 2px;
-    text-transform: uppercase;
+  p.kicker {
     font-size: 0.72rem;
-    letter-spacing: 1px;
-    padding: 0.32rem 0.55rem;
-    font-weight: 500;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
   }
 
   .location {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.4rem;
     color: var(--muted);
-    font-size: 0.82rem;
-    margin-bottom: 1.25rem;
+    font-size: 0.78rem;
+    margin-bottom: 1.35rem;
   }
 
-  .location svg { width: 15px; height: 15px; }
+  .location svg { width: 14px; height: 14px; flex-shrink: 0; }
 
   hr.divider {
     border: none;
     border-top: 1px solid var(--card-border);
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.6rem;
   }
 
-  /* ── SOCIALS ── */
-  section.socials {
-    display: flex;
-    justify-content: center;
-    gap: 0.7rem;
-    margin-bottom: 1.5rem;
+  /* ── SIGA-ME (redes sociais tangíveis) ── */
+  .section-label {
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    color: var(--muted);
+    font-weight: 500;
+    margin: 0 0 0.85rem;
   }
 
-  .social-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid var(--card-border);
+  section.socials { margin-bottom: 1.75rem; }
+
+  .social-list {
     background: var(--card);
-    color: var(--ink);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .social-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+    gap: 0.8rem;
+    padding: 0.75rem 0.9rem;
     text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid var(--card-border);
+    transition: background 0.16s ease;
   }
 
-  .social-btn svg { width: 18px; height: 18px; }
+  .social-row:last-child { border-bottom: none; }
 
-  .social-btn:hover {
-    background: var(--ink);
-    color: var(--bg);
-    transform: translateY(-2px);
+  .social-row:hover { background: var(--tag-bg); }
+
+  .social-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--ink);
+    display: flex;
   }
+
+  .social-icon svg { width: 100%; height: 100%; }
+
+  .social-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .social-text strong {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .social-text span {
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+
+  .social-cta {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .social-cta svg { width: 14px; height: 14px; }
 
   /* ── CONTACT PILLS ── */
   section.contacts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
   }
@@ -240,63 +258,47 @@
     color: var(--bg);
   }
 
-  /* ── SECTION LABELS ── */
-  .section-label {
-    text-transform: uppercase;
-    font-size: 0.68rem;
-    letter-spacing: 2px;
-    color: var(--muted);
-    font-weight: 500;
-    margin-bottom: 0.85rem;
-  }
-
-  /* ── SERVICES ── */
+  /* ── SERVIÇOS: lista editorial numerada ── */
   section.services { margin-bottom: 2rem; }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
+  .service-list {
+    border-top: 1px solid var(--card-border);
   }
 
-  .service-card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 6px;
-    padding: 0.9rem 0.7rem;
-    text-align: center;
-    transition: border-color 0.16s ease, transform 0.16s ease;
+  .service-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--card-border);
   }
 
-  .service-card:hover {
-    border-color: var(--ink);
-    transform: translateY(-2px);
+  .service-num {
+    flex-shrink: 0;
+    width: 1.6rem;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--accent);
   }
 
-  .service-card svg {
-    width: 20px;
-    height: 20px;
-    margin-bottom: 0.5rem;
-    color: var(--ink);
-  }
-
-  .service-card h3 {
+  .service-text h3 {
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
-    font-size: 0.82rem;
-    margin: 0 0 0.3rem;
+    font-size: 0.85rem;
+    margin: 0 0 0.2rem;
   }
 
-  .service-card p {
+  .service-text p {
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
-    font-size: 0.72rem;
+    font-size: 0.76rem;
     color: var(--muted);
     margin: 0;
-    line-height: 1.35;
+    line-height: 1.4;
   }
 
-  /* ── PROJECTS ── */
+  /* ── PROJECTOS ── */
   section.projects { margin-bottom: 2rem; }
 
   .project-list {
@@ -311,35 +313,28 @@
     gap: 0.75rem;
     background: var(--card);
     border: 1px solid var(--card-border);
-    border-left: 3px solid var(--proj-color, var(--ink));
+    border-left: 3px solid var(--card-border);
     border-radius: 6px;
     padding: 0.7rem 0.85rem;
     text-decoration: none;
     color: inherit;
-    transition: all 0.16s ease;
+    transition: border-color 0.16s ease, transform 0.16s ease;
   }
 
   .project-card:hover {
     transform: translateX(4px);
-    border-left: 3px solid var(--ink);
+    border-left-color: var(--accent);
   }
 
   .project-icon {
     flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--proj-tint, var(--tag-bg));
+    width: 20px;
+    height: 20px;
+    color: var(--ink2);
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
-  .project-icon svg {
-    width: 18px;
-    height: 18px;
-    color: var(--proj-color, var(--ink));
-  }
+  .project-icon svg { width: 100%; height: 100%; }
 
   .project-text { flex: 1; min-width: 0; }
 
@@ -391,7 +386,7 @@
   .cta-btn svg { width: 19px; height: 19px; }
 
   .cta-btn:hover {
-    background: var(--accent-green);
+    background: var(--accent);
     transform: translateY(-1px);
   }
 
@@ -407,21 +402,17 @@
 <main>
 
   <header class="hero">
-    <div class="avatar-wrap">
+    <div class="hero-photo">
       <div class="avatar-fallback">FM</div>
-      <img src="foto.jpg" alt="Fredson Muianga" class="avatar-img" onerror="this.style.display='none'">
-      <span class="status-dot"></span>
+      <img src="foto.jpg" alt="Fredson Muianga" onerror="this.style.display='none'">
     </div>
 
-    <h1 class="name">FREDSON MUIANGA</h1>
-    <p class="subtitle">Empreendedor · Mentor · Palestrante</p>
-
-    <div class="tags">
-      <span class="tag">Maputo, MZ</span>
-      <span class="tag">Educação</span>
-      <span class="tag">Tecnologia</span>
-      <span class="tag">Impacto Social</span>
+    <div class="identity-block">
+      <h1 class="name">FREDSON<br>MUIANGA</h1>
+      <p class="subtitle">Conselheiro · Consultor · Empresário · Filantropo</p>
     </div>
+
+    <p class="kicker">EDUCAÇÃO · TECNOLOGIA · IMPACTO SOCIAL</p>
 
     <div class="location">
       <i data-lucide="map-pin"></i>
@@ -432,18 +423,41 @@
   </header>
 
   <section class="socials" aria-label="Redes sociais">
-    <a class="social-btn" href="https://www.instagram.com/muianga.oficial?igsi=bmZqZWptcHN6ZHR2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a class="social-btn" href="https://www.facebook.com/share/1B5XpVw2Yw/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 1.926-.287 1.741h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 6.135 4.604 11.194 10.101 11.647Z"/></svg>
-    </a>
-    <a class="social-btn" href="https://www.linkedin.com/in/fredson-muianga-7495831ba" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-    </a>
-    <a class="social-btn" href="https://www.threads.com/@muianga.oficial" target="_blank" rel="noopener noreferrer" aria-label="Threads">
-      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.017v-.014c0-3.568.852-6.42 2.503-8.482C5.845 1.204 8.6.024 12.18 0h.014c2.746.02 5.032.725 6.797 2.098 1.658 1.29 2.844 3.13 3.523 5.466l-2.242.646c-1.14-3.94-3.973-5.945-8.418-5.977-2.9.02-5.1.94-6.548 2.735-1.354 1.674-2.043 4.098-2.05 7.207.007 3.11.696 5.533 2.05 7.206 1.448 1.795 3.648 2.716 6.548 2.735 2.618-.018 4.35-.648 5.79-2.107 1.642-1.663 1.611-3.703 1.088-4.955-.31-.743-.872-1.36-1.634-1.809-.19 1.361-.634 2.446-1.322 3.239-.912 1.049-2.192 1.626-3.808 1.717-1.222.068-2.395-.218-3.302-.809-1.074-.7-1.706-1.782-1.78-3.05-.145-2.5 1.85-4.298 4.964-4.481.884-.052 1.712-.012 2.475.12-.101-.615-.31-1.106-.622-1.464-.428-.49-1.09-.744-1.972-.756h-.036c-.708 0-1.674.196-2.29 1.128l-1.912-1.31c.826-1.24 2.169-1.923 3.79-1.923h.052c2.756.018 4.398 1.7 4.562 4.657.094.017.187.035.28.055 1.281.28 2.31.887 2.978 1.775.928 1.235 1.166 3.28.026 5.35-1.35 2.436-3.72 3.554-7.183 3.577Zm-.622-9.982c-.147 0-.296.004-.448.013-1.65.096-2.638.878-2.577 1.97.062 1.086 1.24 1.717 2.706 1.634 1.267-.072 2.36-.6 2.822-2.63a10.63 10.63 0 0 0-2.503-.987Z"/></svg>
-    </a>
+    <p class="section-label">SIGA-ME</p>
+    <div class="social-list">
+      <a class="social-row" href="https://www.instagram.com/muianga.oficial?igsi=bmZqZWptcHN6ZHR2" target="_blank" rel="noopener noreferrer">
+        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span>
+        <span class="social-text">
+          <strong>Instagram</strong>
+          <span>@muianga.oficial</span>
+        </span>
+        <span class="social-cta">Seguir <i data-lucide="chevron-right"></i></span>
+      </a>
+      <a class="social-row" href="https://www.facebook.com/share/1B5XpVw2Yw/" target="_blank" rel="noopener noreferrer">
+        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 1.926-.287 1.741h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 6.135 4.604 11.194 10.101 11.647Z"/></svg></span>
+        <span class="social-text">
+          <strong>Facebook</strong>
+          <span>Perfil pessoal</span>
+        </span>
+        <span class="social-cta">Seguir <i data-lucide="chevron-right"></i></span>
+      </a>
+      <a class="social-row" href="https://www.linkedin.com/in/fredson-muianga-7495831ba" target="_blank" rel="noopener noreferrer">
+        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+        <span class="social-text">
+          <strong>LinkedIn</strong>
+          <span>Fredson Muianga</span>
+        </span>
+        <span class="social-cta">Conectar <i data-lucide="chevron-right"></i></span>
+      </a>
+      <a class="social-row" href="https://www.threads.com/@muianga.oficial" target="_blank" rel="noopener noreferrer">
+        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.017v-.014c0-3.568.852-6.42 2.503-8.482C5.845 1.204 8.6.024 12.18 0h.014c2.746.02 5.032.725 6.797 2.098 1.658 1.29 2.844 3.13 3.523 5.466l-2.242.646c-1.14-3.94-3.973-5.945-8.418-5.977-2.9.02-5.1.94-6.548 2.735-1.354 1.674-2.043 4.098-2.05 7.207.007 3.11.696 5.533 2.05 7.206 1.448 1.795 3.648 2.716 6.548 2.735 2.618-.018 4.35-.648 5.79-2.107 1.642-1.663 1.611-3.703 1.088-4.955-.31-.743-.872-1.36-1.634-1.809-.19 1.361-.634 2.446-1.322 3.239-.912 1.049-2.192 1.626-3.808 1.717-1.222.068-2.395-.218-3.302-.809-1.074-.7-1.706-1.782-1.78-3.05-.145-2.5 1.85-4.298 4.964-4.481.884-.052 1.712-.012 2.475.12-.101-.615-.31-1.106-.622-1.464-.428-.49-1.09-.744-1.972-.756h-.036c-.708 0-1.674.196-2.29 1.128l-1.912-1.31c.826-1.24 2.169-1.923 3.79-1.923h.052c2.756.018 4.398 1.7 4.562 4.657.094.017.187.035.28.055 1.281.28 2.31.887 2.978 1.775.928 1.235 1.166 3.28.026 5.35-1.35 2.436-3.72 3.554-7.183 3.577Zm-.622-9.982c-.147 0-.296.004-.448.013-1.65.096-2.638.878-2.577 1.97.062 1.086 1.24 1.717 2.706 1.634 1.267-.072 2.36-.6 2.822-2.63a10.63 10.63 0 0 0-2.503-.987Z"/></svg></span>
+        <span class="social-text">
+          <strong>Threads</strong>
+          <span>@muianga.oficial</span>
+        </span>
+        <span class="social-cta">Seguir <i data-lucide="chevron-right"></i></span>
+      </a>
+    </div>
   </section>
 
   <section class="contacts" aria-label="Contacto rápido">
@@ -463,36 +477,48 @@
 
   <section class="services" aria-label="Serviços">
     <p class="section-label">O QUE FAÇO</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <i data-lucide="lightbulb"></i>
-        <h3>Consultoria Empresarial</h3>
-        <p>Estratégia, gestão e crescimento de negócios</p>
+    <div class="service-list">
+      <div class="service-row">
+        <span class="service-num">01</span>
+        <span class="service-text">
+          <h3>Consultoria Empresarial</h3>
+          <p>Estratégia, gestão e crescimento de negócios</p>
+        </span>
       </div>
-      <div class="service-card">
-        <i data-lucide="laptop"></i>
-        <h3>Assistência Digital</h3>
-        <p>Suporte técnico e soluções digitais</p>
+      <div class="service-row">
+        <span class="service-num">02</span>
+        <span class="service-text">
+          <h3>Assistência Digital</h3>
+          <p>Suporte técnico e soluções digitais</p>
+        </span>
       </div>
-      <div class="service-card">
-        <i data-lucide="graduation-cap"></i>
-        <h3>Educação Digital</h3>
-        <p>Formação em tecnologia para todos os níveis</p>
+      <div class="service-row">
+        <span class="service-num">03</span>
+        <span class="service-text">
+          <h3>Educação Digital</h3>
+          <p>Formação em tecnologia para todos os níveis</p>
+        </span>
       </div>
-      <div class="service-card">
-        <i data-lucide="users"></i>
-        <h3>Mentoria & Coaching</h3>
-        <p>Desenvolvimento pessoal e profissional</p>
+      <div class="service-row">
+        <span class="service-num">04</span>
+        <span class="service-text">
+          <h3>Mentoria & Coaching</h3>
+          <p>Desenvolvimento pessoal e profissional</p>
+        </span>
       </div>
-      <div class="service-card">
-        <i data-lucide="monitor-play"></i>
-        <h3>Treinamentos</h3>
-        <p>Workshops e programas de capacitação</p>
+      <div class="service-row">
+        <span class="service-num">05</span>
+        <span class="service-text">
+          <h3>Treinamentos</h3>
+          <p>Workshops e programas de capacitação</p>
+        </span>
       </div>
-      <div class="service-card">
-        <i data-lucide="wrench"></i>
-        <h3>Resolução de Problemas</h3>
-        <p>Análise e solução para qualquer desafio</p>
+      <div class="service-row">
+        <span class="service-num">06</span>
+        <span class="service-text">
+          <h3>Resolução de Problemas</h3>
+          <p>Análise e solução para qualquer desafio</p>
+        </span>
       </div>
     </div>
   </section>
@@ -501,8 +527,7 @@
     <p class="section-label">PROJECTOS & EMPRESAS</p>
     <div class="project-list">
 
-      <a class="project-card" style="--proj-color: var(--accent-green); --proj-tint: #E4EAE6;"
-         href="https://sonhoeuropapp.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="https://sonhoeuropapp.vercel.app/" target="_blank" rel="noopener noreferrer">
         <span class="project-icon"><i data-lucide="plane"></i></span>
         <span class="project-text">
           <h3>SonhoEuropa</h3>
@@ -511,8 +536,7 @@
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
 
-      <a class="project-card" style="--proj-color: var(--accent-red); --proj-tint: #F3E3DD;"
-         href="https://muiangacarreiras.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="https://muiangacarreiras.vercel.app/" target="_blank" rel="noopener noreferrer">
         <span class="project-icon"><i data-lucide="file-text"></i></span>
         <span class="project-text">
           <h3>Muianga Carreiras</h3>
@@ -521,19 +545,7 @@
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
 
-      <a class="project-card" style="--proj-color: var(--accent-red); --proj-tint: #F3E3DD;"
-         href="#" target="_blank" rel="noopener noreferrer">
-        <!-- TODO -->
-        <span class="project-icon"><i data-lucide="shopping-bag"></i></span>
-        <span class="project-text">
-          <h3>Bolada</h3>
-          <p>Marketplace de micro-serviços para jovens moçambicanos</p>
-        </span>
-        <i data-lucide="chevron-right" class="chevron"></i>
-      </a>
-
-      <a class="project-card" style="--proj-color: var(--accent-blue); --proj-tint: #E1E7EE;"
-         href="#" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="#" target="_blank" rel="noopener noreferrer">
         <!-- TODO -->
         <span class="project-icon"><i data-lucide="briefcase"></i></span>
         <span class="project-text">
@@ -543,8 +555,7 @@
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
 
-      <a class="project-card" style="--proj-color: var(--accent-green); --proj-tint: #E4EAE6;"
-         href="#" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="#" target="_blank" rel="noopener noreferrer">
         <!-- TODO -->
         <span class="project-icon"><i data-lucide="building-2"></i></span>
         <span class="project-text">
@@ -554,8 +565,7 @@
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
 
-      <a class="project-card" style="--proj-color: var(--accent-olive); --proj-tint: #ECEEE1;"
-         href="#" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="#" target="_blank" rel="noopener noreferrer">
         <!-- TODO -->
         <span class="project-icon"><i data-lucide="graduation-cap"></i></span>
         <span class="project-text">
@@ -565,19 +575,17 @@
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
 
-      <a class="project-card" style="--proj-color: var(--ink); --proj-tint: var(--tag-bg);"
-         href="#" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="#" target="_blank" rel="noopener noreferrer">
         <!-- TODO -->
         <span class="project-icon"><i data-lucide="music-2"></i></span>
         <span class="project-text">
           <h3>Michele e Banda</h3>
-          <p>Gestão e representação de grupo de música ao vivo</p>
+          <p>Gestão artística, artes e cultura — com banda de música ao vivo</p>
         </span>
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
 
-      <a class="project-card" style="--proj-color: var(--accent-brown); --proj-tint: #EEE3DA;"
-         href="#" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="#" target="_blank" rel="noopener noreferrer">
         <!-- TODO -->
         <span class="project-icon"><i data-lucide="heart"></i></span>
         <span class="project-text">
@@ -587,8 +595,7 @@
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
 
-      <a class="project-card" style="--proj-color: var(--accent-blue); --proj-tint: #E1E7EE;"
-         href="#" target="_blank" rel="noopener noreferrer">
+      <a class="project-card" href="#" target="_blank" rel="noopener noreferrer">
         <!-- TODO -->
         <span class="project-icon"><i data-lucide="school"></i></span>
         <span class="project-text">

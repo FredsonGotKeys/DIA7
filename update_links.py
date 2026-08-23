@@ -38,7 +38,6 @@ PHONE_PATTERN = re.compile(r"^\+?258[0-9]{9}$")
 
 PROJECT_NAMES = [
     "SonhoEuropa",
-    "Bolada",
     "Muianga Consultores",
     "ADIEP",
     "Mentoria Elite",

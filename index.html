@@ -45,6 +45,21 @@
 
   * { box-sizing: border-box; }
 
+  .icon-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    -webkit-mask-image: var(--icon-src);
+    mask-image: var(--icon-src);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+
   body {
     margin: 0;
     background: var(--bg);
@@ -450,6 +465,8 @@
 
   .cta-btn svg { width: 19px; height: 19px; }
 
+  .cta-icon { display: block; width: 19px; height: 19px; }
+
   .cta-btn:hover {
     background: var(--accent);
     transform: translateY(-1px);
@@ -513,7 +530,7 @@
         <span class="social-cta">Conectar <i data-lucide="chevron-right"></i></span>
       </a>
       <a class="social-row" href="https://www.threads.com/@muianga.oficial" target="_blank" rel="noopener noreferrer">
-        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.017v-.014c0-3.568.852-6.42 2.503-8.482C5.845 1.204 8.6.024 12.18 0h.014c2.746.02 5.032.725 6.797 2.098 1.658 1.29 2.844 3.13 3.523 5.466l-2.242.646c-1.14-3.94-3.973-5.945-8.418-5.977-2.9.02-5.1.94-6.548 2.735-1.354 1.674-2.043 4.098-2.05 7.207.007 3.11.696 5.533 2.05 7.206 1.448 1.795 3.648 2.716 6.548 2.735 2.618-.018 4.35-.648 5.79-2.107 1.642-1.663 1.611-3.703 1.088-4.955-.31-.743-.872-1.36-1.634-1.809-.19 1.361-.634 2.446-1.322 3.239-.912 1.049-2.192 1.626-3.808 1.717-1.222.068-2.395-.218-3.302-.809-1.074-.7-1.706-1.782-1.78-3.05-.145-2.5 1.85-4.298 4.964-4.481.884-.052 1.712-.012 2.475.12-.101-.615-.31-1.106-.622-1.464-.428-.49-1.09-.744-1.972-.756h-.036c-.708 0-1.674.196-2.29 1.128l-1.912-1.31c.826-1.24 2.169-1.923 3.79-1.923h.052c2.756.018 4.398 1.7 4.562 4.657.094.017.187.035.28.055 1.281.28 2.31.887 2.978 1.775.928 1.235 1.166 3.28.026 5.35-1.35 2.436-3.72 3.554-7.183 3.577Zm-.622-9.982c-.147 0-.296.004-.448.013-1.65.096-2.638.878-2.577 1.97.062 1.086 1.24 1.717 2.706 1.634 1.267-.072 2.36-.6 2.822-2.63a10.63 10.63 0 0 0-2.503-.987Z"/></svg></span>
+        <span class="social-icon"><span class="icon-img" style="--icon-src: url('assets/threads-icon.png')"></span></span>
         <span class="social-text">
           <strong>Threads</strong>
           <span>@muianga.oficial</span>
@@ -543,7 +560,7 @@
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
       <a class="contact-row" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20teu%20perfil!" target="_blank" rel="noopener noreferrer">
-        <span class="contact-icon"><i data-lucide="message-circle"></i></span>
+        <span class="contact-icon"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span>
         <span class="contact-text">
           <strong>WhatsApp</strong>
           <span>Conversar agora</span>
@@ -730,7 +747,7 @@
 
   <section class="cta">
     <a class="cta-btn" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20teu%20perfil!" target="_blank" rel="noopener noreferrer">
-      <i data-lucide="message-circle"></i>
+      <span class="cta-icon"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span>
       <span>FALA COMIGO NO WHATSAPP</span>
     </a>
   </section>

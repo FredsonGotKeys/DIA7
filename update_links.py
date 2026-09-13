@@ -167,8 +167,18 @@ def actualizar_email(html: str, email: str) -> str:
         HTML actualizado.
     """
     html = re.sub(r"mailto:[^\"']+", f"mailto:{email}", html)
-    html = re.sub(r"<span>[\w.+-]+@[\w.-]+\.\w+</span>\s*</a>\s*<a class=\"pill\" href=\"https://wa\.me",
-                  f"<span>{email}</span></a><a class=\"pill\" href=\"https://wa.me", html)
+
+    # Actualiza o endereço visível dentro do contact-row do email (o único
+    # bloco "<a ...mailto:...>...</a>" da página), sem depender de marcação
+    # antiga que já não existe. O endereço de e-mail também aparece dentro
+    # do atributo href desse mesmo bloco, por isso a substituição do texto
+    # visível só actua na parte a seguir ao fecho da tag "<a ...>".
+    def substituir_texto_visivel(match: re.Match) -> str:
+        abertura, resto = match.group(0).split(">", 1)
+        resto = re.sub(r"[\w.+-]+@[\w.-]+\.\w+", email, resto, count=1)
+        return f"{abertura}>{resto}"
+
+    html = re.sub(r'<a class="contact-row" href="mailto:[^"]*">.*?</a>', substituir_texto_visivel, html, count=1, flags=re.DOTALL)
     return html
 
 

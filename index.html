@@ -305,9 +305,17 @@
     border-top: 1px solid var(--card-border);
   }
 
+  p.services-intro {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink2);
+    margin: -0.35rem 0 1rem;
+  }
+
   .service-row {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 0.9rem;
     padding: 0.85rem 0;
     border-bottom: 1px solid var(--card-border);
@@ -320,6 +328,13 @@
     font-style: italic;
     font-size: 0.95rem;
     color: var(--accent);
+    align-self: flex-start;
+    margin-top: 0.1rem;
+  }
+
+  .service-text {
+    flex: 1;
+    min-width: 0;
   }
 
   .service-text h3 {
@@ -336,6 +351,37 @@
     color: var(--muted);
     margin: 0;
     line-height: 1.4;
+  }
+
+  .service-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .service-action {
+    width: 22px;
+    height: 22px;
+    padding: 7px;
+    margin: -7px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink2);
+    text-decoration: none;
+    transition: color 0.16s ease, transform 0.16s ease;
+  }
+
+  .service-action svg,
+  .service-action .icon-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .service-action:hover {
+    color: var(--accent);
+    transform: scale(1.08);
   }
 
   /* ── PROJECTOS ── */
@@ -551,6 +597,14 @@
         </span>
         <i data-lucide="chevron-right" class="chevron"></i>
       </a>
+      <a class="contact-row" href="tel:+258876252006">
+        <span class="contact-icon"><i data-lucide="phone"></i></span>
+        <span class="contact-text">
+          <strong>Telefone</strong>
+          <span>+258 87 625 2006</span>
+        </span>
+        <i data-lucide="chevron-right" class="chevron"></i>
+      </a>
       <a class="contact-row" href="mailto:minville@outlook.pt">
         <span class="contact-icon"><i data-lucide="mail"></i></span>
         <span class="contact-text">
@@ -572,47 +626,72 @@
 
   <section class="services" aria-label="Serviços">
     <p class="section-label">O QUE FAÇO</p>
+    <p class="services-intro">Sem formulários. Ligue ou escreva e falamos já sobre o seu caso.</p>
     <div class="service-list">
       <div class="service-row">
         <span class="service-num">01</span>
         <span class="service-text">
           <h3>Consultoria Empresarial</h3>
-          <p>Estratégia, gestão e crescimento de negócios</p>
+          <p>Um diagnóstico claro do seu negócio e um plano de acção para crescer</p>
+        </span>
+        <span class="service-actions">
+          <a class="service-action" href="tel:+258846283051" aria-label="Ligar sobre Consultoria Empresarial"><i data-lucide="phone"></i></a>
+          <a class="service-action" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Consultoria%20Empresarial" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Consultoria Empresarial"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></a>
         </span>
       </div>
       <div class="service-row">
         <span class="service-num">02</span>
         <span class="service-text">
           <h3>Assistência Digital</h3>
-          <p>Suporte técnico e soluções digitais</p>
+          <p>Resolvo o que trava o seu negócio online, do site às ferramentas do dia-a-dia</p>
+        </span>
+        <span class="service-actions">
+          <a class="service-action" href="tel:+258846283051" aria-label="Ligar sobre Assistência Digital"><i data-lucide="phone"></i></a>
+          <a class="service-action" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Assistência%20Digital" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Assistência Digital"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></a>
         </span>
       </div>
       <div class="service-row">
         <span class="service-num">03</span>
         <span class="service-text">
           <h3>Educação Digital</h3>
-          <p>Formação em tecnologia para todos os níveis</p>
+          <p>Formação prática em tecnologia, do zero ao avançado</p>
+        </span>
+        <span class="service-actions">
+          <a class="service-action" href="tel:+258846283051" aria-label="Ligar sobre Educação Digital"><i data-lucide="phone"></i></a>
+          <a class="service-action" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Educação%20Digital" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Educação Digital"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></a>
         </span>
       </div>
       <div class="service-row">
         <span class="service-num">04</span>
         <span class="service-text">
           <h3>Mentoria & Coaching</h3>
-          <p>Desenvolvimento pessoal e profissional</p>
+          <p>Acompanhamento próximo para destravar a sua carreira ou negócio</p>
+        </span>
+        <span class="service-actions">
+          <a class="service-action" href="tel:+258846283051" aria-label="Ligar sobre Mentoria e Coaching"><i data-lucide="phone"></i></a>
+          <a class="service-action" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Mentoria%20%26%20Coaching" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Mentoria e Coaching"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></a>
         </span>
       </div>
       <div class="service-row">
         <span class="service-num">05</span>
         <span class="service-text">
           <h3>Treinamentos</h3>
-          <p>Workshops e programas de capacitação</p>
+          <p>Workshops práticos para equipas que precisam de resultados rápidos</p>
+        </span>
+        <span class="service-actions">
+          <a class="service-action" href="tel:+258846283051" aria-label="Ligar sobre Treinamentos"><i data-lucide="phone"></i></a>
+          <a class="service-action" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Treinamentos" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Treinamentos"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></a>
         </span>
       </div>
       <div class="service-row">
         <span class="service-num">06</span>
         <span class="service-text">
           <h3>Resolução de Problemas</h3>
-          <p>Análise e solução para qualquer desafio</p>
+          <p>Analiso o problema e trago uma solução concreta, sem rodeios</p>
+        </span>
+        <span class="service-actions">
+          <a class="service-action" href="tel:+258846283051" aria-label="Ligar sobre Resolução de Problemas"><i data-lucide="phone"></i></a>
+          <a class="service-action" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Resolução%20de%20Problemas" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Resolução de Problemas"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></a>
         </span>
       </div>
     </div>

@@ -131,14 +131,28 @@ def actualizar_whatsapp(html: str, numero: str) -> str:
         console.print(Panel(f"[red]Número inválido: {numero}. Esperado formato +258XXXXXXXXX[/red]"))
         sys.exit(1)
 
+    # O número antigo é lido a partir do primeiro link wa.me existente, para que
+    # a substituição de "tel:" só afecte esse mesmo número (usado nos botões de
+    # ligar dos serviços e no contacto principal), sem tocar noutros telefones
+    # (ex: um segundo número de contacto que seja diferente do WhatsApp).
+    numero_antigo_match = re.search(r"https://wa\.me/(258\d{9})", html)
+    numero_antigo = numero_antigo_match.group(1) if numero_antigo_match else None
+
     html = re.sub(
         r"https://wa\.me/258\d{9}(\?text=[^\"']*)?",
         lambda m: f"https://wa.me/{numero_limpo}{m.group(1) or ''}",
         html,
     )
-    html = re.sub(r"tel:\+258\d{9}", f"tel:+{numero_limpo}", html)
+
+    if numero_antigo:
+        html = re.sub(re.escape(f"tel:+{numero_antigo}"), f"tel:+{numero_limpo}", html)
+    else:
+        console.print(Panel("[yellow]Aviso: não foi possível identificar o número antigo; os links 'tel:' não foram actualizados.[/yellow]"))
+
     numero_formatado = f"+{numero_limpo[:3]} {numero_limpo[3:5]} {numero_limpo[5:8]} {numero_limpo[8:]}"
-    html = re.sub(r"\+258\s?\d{2}\s?\d{3}\s?\d{4}(?=</span>\s*</a>)", numero_formatado, html, count=1)
+    if numero_antigo:
+        numero_antigo_formatado = f"+{numero_antigo[:3]} {numero_antigo[3:5]} {numero_antigo[5:8]} {numero_antigo[8:]}"
+        html = html.replace(numero_antigo_formatado, numero_formatado)
     return html
 
 

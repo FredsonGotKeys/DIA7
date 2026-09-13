@@ -190,7 +190,7 @@ def gerar_og_image_html(site_url: str) -> None:
   html, body {{
     width: 1200px;
     height: 630px;
-    background: #E9E2D3;
+    background: #F5F1E8;
     font-family: 'DM Sans', sans-serif;
     overflow: hidden;
   }}
@@ -209,11 +209,11 @@ def gerar_og_image_html(site_url: str) -> None:
     border-radius: 24px;
     object-fit: cover;
     object-position: top center;
-    border: 1px solid #D8CBB4;
+    border: 1px solid #E1DACB;
   }}
   .photo-fallback {{
-    background: #16332B;
-    color: #E9E2D3;
+    background: #1F2A24;
+    color: #F5F1E8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -226,21 +226,21 @@ def gerar_og_image_html(site_url: str) -> None:
     font-size: 4.4rem;
     line-height: 0.98;
     letter-spacing: 3px;
-    color: #211A13;
+    color: #1C1B1A;
     margin-bottom: 18px;
   }}
   p.tagline {{
     font-family: 'Lora', serif;
     font-style: italic;
     font-size: 1.55rem;
-    color: #55483A;
+    color: #4A4642;
     margin-bottom: 28px;
   }}
   p.footer {{
     font-size: 1.05rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #A8431E;
+    color: #9C6B2E;
     font-weight: 500;
   }}
 </style>

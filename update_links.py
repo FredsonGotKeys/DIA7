@@ -42,7 +42,7 @@ PROJECT_NAMES = [
     "ADIEP",
     "Mentoria Elite",
     "Artes e Cultura",
-    "Fundação Muianga",
+    "Fundação Fredson Muianga",
     "Escola Seiva da Nação",
     "Muianga Carreiras",
 ]

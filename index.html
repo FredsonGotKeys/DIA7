@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Fredson Muianga — Empresário · Consultor · Escritor · Fundador">
+<meta property="og:title" content="Fredson Muianga — Consultor Multifuncional · Escritor · Filantropo">
 <meta property="og:description" content="Negócios, tecnologia, educação e cultura em Moçambique. Fundador da SonhoEuropa, Muianga Carreiras e Muianga Consultores — a partir de Maputo.">
 <meta property="og:image" content="https://fredsonmuianga.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -14,17 +14,17 @@
 <meta property="og:site_name" content="Fredson Muianga">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fredson Muianga — Empresário · Consultor · Escritor · Fundador">
+<meta name="twitter:title" content="Fredson Muianga — Consultor Multifuncional · Escritor · Filantropo">
 <meta name="twitter:description" content="Negócios, tecnologia, educação e cultura em Moçambique. Fundador da SonhoEuropa, Muianga Carreiras e Muianga Consultores — a partir de Maputo.">
 <meta name="twitter:image" content="https://fredsonmuianga.com/og-image.png">
 
-<meta name="description" content="Fredson Muianga — Empresário, Consultor, Escritor e Fundador moçambicano. Negócios, tecnologia, educação e impacto social a partir de Maputo, Moçambique.">
+<meta name="description" content="Fredson Muianga — Consultor Multifuncional, Escritor e Filantropo moçambicano. Negócios, tecnologia, educação e impacto social a partir de Maputo, Moçambique.">
 <meta name="author" content="Fredson Muianga">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23121212'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23F6F5F1' text-anchor='middle'%3EFM%3C/text%3E%3C/svg%3E">
 
-<title>Fredson Muianga — Empresário · Consultor · Escritor · Fundador</title>
+<title>Fredson Muianga — Consultor Multifuncional · Escritor · Filantropo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -312,7 +312,25 @@
     overflow: hidden;
   }
 
+  header.hero::before {
+    content: "MUIANGA";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(7rem, 26vw, 22rem);
+    letter-spacing: 6px;
+    color: rgba(246,245,241,0.035);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .hero-inner {
+    position: relative;
+    z-index: 1;
     display: grid;
     gap: 2.5rem;
     padding: 3.5rem 0 4.5rem;
@@ -333,9 +351,9 @@
   h1.hero-name {
     font-family: var(--serif);
     font-weight: 700;
-    font-size: clamp(2.6rem, 7.2vw, 4.6rem);
-    line-height: 1.02;
-    letter-spacing: 0.2px;
+    font-size: clamp(2.9rem, 8.6vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -1px;
     margin: 0 0 1.1rem;
     color: var(--bg);
   }
@@ -345,8 +363,17 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--accent-dim);
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
     font-weight: 500;
+  }
+
+  p.hero-role::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 1rem;
   }
 
   p.hero-statement {
@@ -381,12 +408,12 @@
   .btn svg { width: 15px; height: 15px; }
 
   .btn-primary {
-    background: var(--bg);
+    background: var(--accent);
     color: var(--hero-bg);
-    border-color: var(--bg);
+    border-color: var(--accent);
   }
 
-  .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: var(--hero-bg); transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--accent-dim); border-color: var(--accent-dim); color: var(--hero-bg); transform: translateY(-1px); }
 
   .btn-ghost {
     color: var(--bg);
@@ -667,6 +694,38 @@
 
   .project-link:hover { color: var(--accent); }
 
+  .project-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    margin-top: 0.2rem;
+    align-self: flex-start;
+  }
+
+  .project-more:hover { color: var(--accent); }
+
+  .project-card.detail-body {
+    border: none;
+    padding: 0;
+    gap: 1.1rem;
+  }
+
+  .project-card.detail-body:hover { transform: none; }
+
+  .project-card.detail-body h3 { font-size: 1.6rem; }
+
+  .project-card.detail-body p.desc { font-size: 0.95rem; line-height: 1.75; }
+
   /* ══════════════ IMPACTO ══════════════ */
   section.impact {
     background: var(--hero-bg);
@@ -746,6 +805,17 @@
     color: var(--ink-2);
     max-width: 52ch;
     margin: 0 0 1.4rem;
+  }
+
+  .share-row { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+
+  .share-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 0 0 0.75rem;
   }
 
   /* ══════════════ PRESENÇA DIGITAL ══════════════ */
@@ -1285,7 +1355,7 @@
     <div class="hero-text">
       <p class="eyebrow">MAPUTO, MOÇAMBIQUE</p>
       <h1 class="hero-name">FREDSON<br>MUIANGA</h1>
-      <p class="hero-role">Empresário · Consultor · Escritor · Fundador</p>
+      <p class="hero-role">Consultor Multifuncional · Escritor · Filantropo</p>
       <p class="hero-statement">Construo negócios, pessoas e oportunidades na fronteira entre estratégia, tecnologia, educação e cultura, a partir de Moçambique.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#projectos">Conhecer o meu trabalho</a>
@@ -1404,6 +1474,7 @@
           <p class="project-role">Fundador</p>
           <p class="desc">Poupança colectiva digital que ajuda grupos de amigos e familiares a poupar em conjunto, de forma transparente e disciplinada, para tornar a emigração para a Europa mais acessível.</p>
           <a class="project-link" href="https://sonhoeuropapp.vercel.app/" target="_blank" rel="noopener noreferrer">Visitar site <i data-lucide="arrow-up-right"></i></a>
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
         <article class="project-card reveal">
@@ -1415,6 +1486,7 @@
           <p class="project-role">Fundador</p>
           <p class="desc">Plataforma de criação de CVs profissionais e vagas de emprego, ligando talento moçambicano a empresas que estão a contratar.</p>
           <a class="project-link" href="https://muiangacarreiras.vercel.app/" target="_blank" rel="noopener noreferrer">Visitar site <i data-lucide="arrow-up-right"></i></a>
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
         <article class="project-card reveal">
@@ -1425,6 +1497,7 @@
           <h3>Muianga Consultores</h3>
           <p class="project-role">Fundador</p>
           <p class="desc">Consultoria empresarial, estratégica e profissional, acompanhando empreendedores e empresas na definição de estratégia e estruturação de processos.</p>
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
         <article class="project-card reveal">
@@ -1439,6 +1512,7 @@
             <p class="copy">Se és empresário, empreendedor ou profissional interessado em desenvolvimento empresarial, inovação, networking e criação de oportunidades, entra em contacto para conheceres melhor a associação e saberes como participar.</p>
             <a class="btn btn-primary" style="color: var(--ink); background: transparent; border-color: var(--ink);" href="https://wa.me/258846283051?text=Olá%2C%20quero%20saber%20mais%20sobre%20a%20ADIEP%20e%20como%20posso%20participar." target="_blank" rel="noopener noreferrer">Quero fazer parte da ADIEP</a>
           </div>
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
         <article class="project-card reveal">
@@ -1448,6 +1522,7 @@
           </div>
           <h3>Mentoria Elite</h3>
           <p class="desc">Programa de mentoria estruturado em três níveis (iniciante, intermédio e avançado) para o desenvolvimento pessoal, técnico e de carreira de jovens profissionais.</p>
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
         <article class="project-card reveal">
@@ -1458,6 +1533,7 @@
           <h3>Artes e Cultura</h3>
           <p class="project-role">Gestor de Talentos</p>
           <p class="desc">Gestão de talentos na área da música e cultura, incluindo a representação da banda Michele e Banda, com foco em produção de espectáculos ao vivo.</p>
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
         <article class="project-card reveal">
@@ -1468,6 +1544,7 @@
           <h3>Fundação Fredson Muianga</h3>
           <p class="project-role">Fundador</p>
           <p class="desc">Fundação dedicada a criar oportunidades reais para jovens moçambicanos, através de programas sociais, educação e apoio comunitário.</p>
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
         <article class="project-card reveal">
@@ -1479,6 +1556,7 @@
           <p class="desc">Escola focada em oferecer educação de qualidade e formação prática em tecnologia, preparando jovens moçambicanos para o mercado de trabalho actual.</p>
           <a class="project-link" href="https://escolaseivadanacao.vercel.app/" target="_blank" rel="noopener noreferrer">Visitar site <i data-lucide="arrow-up-right"></i></a>
         
+          <button type="button" class="project-more js-open-detail">Saber mais &rarr;</button>
         </article>
 
       </div>
@@ -1632,6 +1710,27 @@
           <div class="hero-ctas">
             <a class="btn btn-primary" style="color: var(--ink); background: transparent; border-color: var(--ink);" href="https://checkout.escalepay.com/6347849" target="_blank" rel="noopener noreferrer">Comprar com Emola / M-Pesa</a>
             <a class="btn btn-primary" style="color: var(--ink); background: transparent; border-color: var(--ink);" href="https://checkout.escalepay.com/8395328" target="_blank" rel="noopener noreferrer">Comprar com Visa / Google Pay</a>
+          </div>
+          <div class="share-row">
+            <p class="share-label">Partilhar o livro</p>
+            <div class="presence-row">
+              <a class="presence-link" href="https://wa.me/?text=Estou%20a%20ler%20%22O%20Telem%C3%B3vel%20na%20Mesa%20de%20Jantar%22%2C%20de%20Fredson%20Muianga.%20Vê%20e%20compra%20aqui%3A%20https%3A%2F%2Ffredsonmuianga.com%2F%23pensamentos" target="_blank" rel="noopener noreferrer" aria-label="Partilhar o livro no WhatsApp">
+                <span class="icn"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span>
+                WhatsApp
+              </a>
+              <a class="presence-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffredsonmuianga.com%2F%23pensamentos" target="_blank" rel="noopener noreferrer" aria-label="Partilhar o livro no Facebook">
+                <span class="icn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 1.926-.287 1.741h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 6.135 4.604 11.194 10.101 11.647Z"/></svg></span>
+                Facebook
+              </a>
+              <a class="presence-link" href="https://twitter.com/intent/tweet?text=Estou%20a%20ler%20%22O%20Telem%C3%B3vel%20na%20Mesa%20de%20Jantar%22%2C%20de%20Fredson%20Muianga.&amp;url=https%3A%2F%2Ffredsonmuianga.com%2F%23pensamentos" target="_blank" rel="noopener noreferrer" aria-label="Partilhar o livro no X">
+                <span class="icn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
+                X
+              </a>
+              <button type="button" class="presence-link js-copy-link" data-url="https://fredsonmuianga.com/#pensamentos" style="cursor:pointer; font-family: var(--sans); border: 1px solid var(--line); background: none;">
+                <span class="icn"><i data-lucide="link"></i></span>
+                <span class="js-copy-label">Copiar link</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -1792,6 +1891,16 @@
   </div>
 </footer>
 
+<div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-card">
+    <button type="button" class="modal-close" id="detailModalClose" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <p class="eyebrow" id="detailModalLabel">PROJECTO</p>
+    <div class="project-card detail-body" id="detailModalBody"></div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="networkingModal" role="dialog" aria-modal="true" aria-labelledby="networkingModalTitle" aria-hidden="true">
   <div class="modal-card">
     <button type="button" class="modal-close" id="networkingModalClose" aria-label="Fechar">
@@ -1867,6 +1976,67 @@
   });
   panel.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', closePanel);
+  });
+
+  // Modal de detalhe do projecto
+  var detailModal = document.getElementById('detailModal');
+  var detailModalBody = document.getElementById('detailModalBody');
+  var detailLastFocus = null;
+
+  function openDetailModal(card) {
+    detailLastFocus = document.activeElement;
+    detailModalBody.innerHTML = '';
+    Array.from(card.children).forEach(function (child) {
+      if (child.classList && child.classList.contains('project-more')) { return; }
+      detailModalBody.appendChild(child.cloneNode(true));
+    });
+    detailModal.classList.add('is-open');
+    detailModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('detailModalClose').focus();
+  }
+
+  function closeDetailModal() {
+    detailModal.classList.remove('is-open');
+    detailModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (detailLastFocus) { detailLastFocus.focus(); }
+  }
+
+  document.querySelectorAll('.js-open-detail').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openDetailModal(btn.closest('.project-card'));
+    });
+  });
+
+  document.getElementById('detailModalClose').addEventListener('click', closeDetailModal);
+
+  detailModal.addEventListener('click', function (e) {
+    if (e.target === detailModal) { closeDetailModal(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && detailModal.classList.contains('is-open')) { closeDetailModal(); }
+  });
+
+  // Copiar link do livro
+  document.querySelectorAll('.js-copy-link').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var url = btn.getAttribute('data-url');
+      var label = btn.querySelector('.js-copy-label');
+      var original = label.textContent;
+      function showCopied() {
+        label.textContent = 'Link copiado';
+        setTimeout(function () { label.textContent = original; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(showCopied).catch(function () {
+          window.prompt('Copia o link:', url);
+        });
+      } else {
+        window.prompt('Copia o link:', url);
+      }
+    });
   });
 
   // Networking modal

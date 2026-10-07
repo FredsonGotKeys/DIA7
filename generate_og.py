@@ -32,7 +32,7 @@ OG_IMAGE_HTML = BASE_DIR / "og-image.html"
 
 OG_TITLE = "Fredson Muianga — Consultor Multifuncional · Escritor · Filantropo"
 OG_DESCRIPTION = (
-    "Negócios, tecnologia, educação e cultura em Moçambique. Fundador da "
+    "Negócios, tecnologia, educação e cultura em Moçambique. Detentor da "
     "SonhoEuropa, Muianga Carreiras e Muianga Consultores — a partir de Maputo."
 )
 

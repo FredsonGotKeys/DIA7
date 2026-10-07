@@ -144,8 +144,8 @@ Links de compra reais, já configurados na secção "Pensamentos":
 - **Facebook**: facebook.com/share/1B5XpVw2Yw
 - **LinkedIn**: linkedin.com/in/fredson-muianga-7495831ba
 - **Threads**: threads.com/@muianga.oficial
-- **SonhoEuropa**: https://sonhoeuropapp.vercel.app/ (Fundador)
-- **Muianga Carreiras**: https://muiangacarreiras.vercel.app/ (Fundador —
+- **SonhoEuropa**: https://sonhoeuropapp.vercel.app/ (Detentor)
+- **Muianga Carreiras**: https://muiangacarreiras.vercel.app/ (Detentor —
   CVs e vagas de emprego)
 - **Escola Seiva da Nação**: https://escolaseivadanacao.vercel.app/
 

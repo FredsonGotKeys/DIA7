@@ -1,7 +1,7 @@
 # Fredson Muianga — Link-in-Bio
 
 Landing page pessoal estilo "link-in-bio", estética editorial magazine,
-para Fredson Muianga — Conselheiro, Consultor, Empresário e Filantropo moçambicano
+para Fredson Muianga — Escritor, Consultor, Empresário e Filantropo moçambicano
 baseado em Maputo.
 
 ## Estrutura de ficheiros

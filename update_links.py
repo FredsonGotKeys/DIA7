@@ -168,17 +168,16 @@ def actualizar_email(html: str, email: str) -> str:
     """
     html = re.sub(r"mailto:[^\"']+", f"mailto:{email}", html)
 
-    # Actualiza o endereço visível dentro do contact-row do email (o único
-    # bloco "<a ...mailto:...>...</a>" da página), sem depender de marcação
-    # antiga que já não existe. O endereço de e-mail também aparece dentro
-    # do atributo href desse mesmo bloco, por isso a substituição do texto
-    # visível só actua na parte a seguir ao fecho da tag "<a ...>".
+    # Actualiza o endereço visível dentro do link de email dos contactos (o
+    # único bloco "<a href=\"mailto:...\">...</a>" da página). O endereço
+    # também aparece no próprio atributo href, por isso a substituição do
+    # texto visível só actua na parte a seguir ao fecho da tag "<a ...>".
     def substituir_texto_visivel(match: re.Match) -> str:
         abertura, resto = match.group(0).split(">", 1)
         resto = re.sub(r"[\w.+-]+@[\w.-]+\.\w+", email, resto, count=1)
         return f"{abertura}>{resto}"
 
-    html = re.sub(r'<a class="contact-row" href="mailto:[^"]*">.*?</a>', substituir_texto_visivel, html, count=1, flags=re.DOTALL)
+    html = re.sub(r'<a href="mailto:[^"]*">.*?</a>', substituir_texto_visivel, html, count=1, flags=re.DOTALL)
     return html
 
 
@@ -235,12 +234,12 @@ def actualizar_projecto(html: str, nome: str, url: str) -> str:
         console.print(Panel(f"[red]Projecto desconhecido: {nome}\nDisponíveis: {', '.join(PROJECT_NAMES)}[/red]"))
         sys.exit(1)
 
-    # Cada card fecha no primeiro "</details>" que encontra, por isso o .*? não-guloso
+    # Cada card fecha no primeiro "</article>" que encontra, por isso o .*? não-guloso
     # nunca ultrapassa os limites do próprio card (evita cruzar para o card seguinte).
-    card_pattern = re.compile(r'<details class="project-card">.*?</details>', re.DOTALL)
+    card_pattern = re.compile(r'<article class="project-card[^"]*">.*?</article>', re.DOTALL)
     h3_pattern = re.compile(r"<h3>" + re.escape(nome) + r"</h3>")
     link_pattern = re.compile(r'(<a class="project-link"[^>]*href=")([^"]*)(")')
-    more_close_pattern = re.compile(r'(</div>\s*</details>)')
+    close_pattern = re.compile(r'(\s*</article>)')
 
     encontrado = False
 
@@ -258,7 +257,7 @@ def actualizar_projecto(html: str, nome: str, url: str) -> str:
             f'\n          <a class="project-link" href="{url}" target="_blank" rel="noopener noreferrer">'
             f'Visitar site <i data-lucide="arrow-up-right"></i></a>\n        '
         )
-        return more_close_pattern.sub(lambda m: novo_link + m.group(1), card, count=1)
+        return close_pattern.sub(lambda m: novo_link + m.group(1), card, count=1)
 
     novo_html = card_pattern.sub(substituir_card, html)
     if not encontrado:

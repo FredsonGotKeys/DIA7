@@ -210,7 +210,7 @@ def gerar_og_image_html(site_url: str) -> None:
     object-fit: cover;
     object-position: top center;
     border: 1px solid #BBA573;
-    filter: grayscale(0.4) contrast(1.05);
+    filter: grayscale(0.1) contrast(1.05) saturate(1.1);
   }}
   .photo-fallback {{
     background: #1A1A1A;

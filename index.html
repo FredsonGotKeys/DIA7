@@ -6,17 +6,17 @@
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Fredson Muianga — Empresário · Consultor · Escritor · Fundador">
 <meta property="og:description" content="Negócios, tecnologia, educação e cultura em Moçambique. Fundador da SonhoEuropa, Muianga Carreiras e Muianga Consultores — a partir de Maputo.">
-<meta property="og:image" content="https://muianga.vercel.app/og-image.png">
+<meta property="og:image" content="https://fredsonmuianga.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://muianga.vercel.app">
+<meta property="og:url" content="https://fredsonmuianga.com">
 <meta property="og:locale" content="pt_MZ">
 <meta property="og:site_name" content="Fredson Muianga">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fredson Muianga — Empresário · Consultor · Escritor · Fundador">
 <meta name="twitter:description" content="Negócios, tecnologia, educação e cultura em Moçambique. Fundador da SonhoEuropa, Muianga Carreiras e Muianga Consultores — a partir de Maputo.">
-<meta name="twitter:image" content="https://muianga.vercel.app/og-image.png">
+<meta name="twitter:image" content="https://fredsonmuianga.com/og-image.png">
 
 <meta name="description" content="Fredson Muianga — Empresário, Consultor, Escritor e Fundador moçambicano. Negócios, tecnologia, educação e impacto social a partir de Maputo, Moçambique.">
 <meta name="author" content="Fredson Muianga">
@@ -397,10 +397,14 @@
 
   .hero-photo-wrap {
     position: relative;
-    aspect-ratio: 4 / 5;
-    max-width: 420px;
+    aspect-ratio: 4 / 3.2;
+    max-width: 280px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  @media (min-width: 900px) {
+    .hero-photo-wrap { aspect-ratio: 4 / 5; max-width: 420px; }
   }
 
   .hero-photo-wrap img,
@@ -411,7 +415,7 @@
     height: 100%;
     object-fit: cover;
     object-position: top center;
-    filter: grayscale(0.55) contrast(1.08) brightness(0.96);
+    filter: grayscale(0.1) contrast(1.08) saturate(1.1);
   }
 
   .hero-photo-wrap .avatar-fallback {
@@ -553,7 +557,7 @@
     border-bottom: 1px solid var(--line);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 760px) {
     .area-row { display: grid; grid-template-columns: 6rem 1fr 1.4fr; align-items: baseline; gap: 2rem; }
   }
 
@@ -580,7 +584,7 @@
     margin: 0.5rem 0 0;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 760px) {
     .area-row p { margin: 0; }
   }
 
@@ -1285,7 +1289,7 @@
       <p class="eyebrow">MAPUTO, MOÇAMBIQUE</p>
       <h1 class="hero-name">FREDSON<br>MUIANGA</h1>
       <p class="hero-role">Empresário · Consultor · Escritor · Fundador</p>
-      <p class="hero-statement">Construo negócios, pessoas e oportunidades na fronteira entre estratégia, tecnologia, educação e cultura — a partir de Moçambique.</p>
+      <p class="hero-statement">Construo negócios, pessoas e oportunidades na fronteira entre estratégia, tecnologia, educação e cultura, a partir de Moçambique.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#projectos">Conhecer o meu trabalho</a>
         <a class="btn btn-ghost" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer">Falar comigo</a>
@@ -1296,7 +1300,7 @@
       <div class="avatar-fallback" id="heroFallback">FM</div>
       <img src="foto.jpg" alt="Retrato de Fredson Muianga" onload="document.getElementById('heroFallback').style.display='none'" onerror="this.style.display='none'">
     </div>
-    <div class="scroll-cue"><span class="line"></span> Scroll</div>
+    <div class="scroll-cue"><span class="line"></span> Descer</div>
   </div>
 </header>
 
@@ -1317,7 +1321,7 @@
         </div>
         <div class="reveal">
           <div class="about-body">
-            <p>Fredson Muianga fundou e lidera iniciativas que vão da consultoria empresarial e tecnologia à educação, carreira, cultura e impacto social — sempre com a mesma lógica: identificar um problema real e construir uma estrutura duradoura para o resolver.</p>
+            <p>Fredson Muianga fundou e lidera iniciativas que vão da consultoria empresarial e tecnologia à educação, carreira, cultura e impacto social, sempre com a mesma lógica: identificar um problema real e construir uma estrutura duradoura para o resolver.</p>
             <p>O seu trabalho atravessa a SonhoEuropa (poupança colectiva digital), a Muianga Carreiras (emprego e desenvolvimento profissional), a Muianga Consultores (consultoria estratégica), a Fundação Fredson Muianga (impacto social) e a gestão de talentos na área da música e das artes.</p>
           </div>
           <div class="about-meta">
@@ -1347,37 +1351,37 @@
 
         <div class="area-row reveal">
           <span class="area-num">01</span>
-          <h3>Business &amp; Consulting</h3>
+          <h3>Negócios &amp; Consultoria</h3>
           <p>Estratégia e consultoria empresarial para negócios que precisam de clareza, estrutura e um plano de acção concreto.</p>
         </div>
 
         <div class="area-row reveal">
           <span class="area-num">02</span>
-          <h3>Technology &amp; Digital</h3>
+          <h3>Tecnologia &amp; Digital</h3>
           <p>Assistência e soluções digitais para negócios que operam online, do site às ferramentas do dia-a-dia.</p>
         </div>
 
         <div class="area-row reveal">
           <span class="area-num">03</span>
-          <h3>Education &amp; Career</h3>
-          <p>Formação prática em tecnologia, mentoria e ferramentas de carreira — da Muianga Carreiras à Escola Seiva da Nação.</p>
+          <h3>Educação &amp; Carreira</h3>
+          <p>Formação prática em tecnologia, mentoria e ferramentas de carreira, da Muianga Carreiras à Escola Seiva da Nação.</p>
         </div>
 
         <div class="area-row reveal">
           <span class="area-num">04</span>
-          <h3>Culture &amp; Entertainment</h3>
+          <h3>Cultura &amp; Entretenimento</h3>
           <p>Gestão de talentos e produção de espectáculos ao vivo na área da música e das artes.</p>
         </div>
 
         <div class="area-row reveal">
           <span class="area-num">05</span>
-          <h3>Social Impact</h3>
+          <h3>Impacto Social</h3>
           <p>Programas e instituições voltadas para oportunidades reais para a juventude moçambicana.</p>
         </div>
 
         <div class="area-row reveal">
           <span class="area-num">06</span>
-          <h3>Entrepreneurship &amp; Projects</h3>
+          <h3>Empreendedorismo &amp; Projectos</h3>
           <p>Criação e condução de iniciativas próprias, da ideia à estrutura que as sustenta no tempo.</p>
         </div>
 
@@ -1389,7 +1393,7 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">PROJECTOS &amp; EMPRESAS</p>
-        <h2>Founder Portfolio</h2>
+        <h2>Portfólio de Fundador</h2>
       </div>
 
       <div class="project-grid">
@@ -1397,7 +1401,7 @@
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="plane"></i></span>
-            <span class="project-tag">Entrepreneurship</span>
+            <span class="project-tag">Empreendedorismo</span>
           </div>
           <h3>SonhoEuropa</h3>
           <p class="project-role">Fundador</p>
@@ -1408,7 +1412,7 @@
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="file-text"></i></span>
-            <span class="project-tag">Education &amp; Career</span>
+            <span class="project-tag">Educação &amp; Carreira</span>
           </div>
           <h3>Muianga Carreiras</h3>
           <p class="project-role">Fundador</p>
@@ -1419,7 +1423,7 @@
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="briefcase"></i></span>
-            <span class="project-tag">Business &amp; Consulting</span>
+            <span class="project-tag">Negócios &amp; Consultoria</span>
           </div>
           <h3>Muianga Consultores</h3>
           <p class="project-role">Fundador</p>
@@ -1429,7 +1433,7 @@
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="building-2"></i></span>
-            <span class="project-tag">Social Impact</span>
+            <span class="project-tag">Impacto Social</span>
           </div>
           <h3>ADIEP</h3>
           <p class="desc">Associação de Desenvolvimento e Inovação Empresarial, voltada para apoiar empreendedores moçambicanos através de formação, networking e acesso a financiamento.</p>
@@ -1443,16 +1447,16 @@
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="graduation-cap"></i></span>
-            <span class="project-tag">Education &amp; Career</span>
+            <span class="project-tag">Educação &amp; Carreira</span>
           </div>
           <h3>Mentoria Elite</h3>
-          <p class="desc">Programa de mentoria estruturado em três níveis — iniciante, intermédio e avançado — para o desenvolvimento pessoal, técnico e de carreira de jovens profissionais.</p>
+          <p class="desc">Programa de mentoria estruturado em três níveis (iniciante, intermédio e avançado) para o desenvolvimento pessoal, técnico e de carreira de jovens profissionais.</p>
         </article>
 
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="music-2"></i></span>
-            <span class="project-tag">Culture &amp; Entertainment</span>
+            <span class="project-tag">Cultura &amp; Entretenimento</span>
           </div>
           <h3>Artes e Cultura</h3>
           <p class="project-role">Gestor de Talentos</p>
@@ -1462,7 +1466,7 @@
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="heart"></i></span>
-            <span class="project-tag">Social Impact</span>
+            <span class="project-tag">Impacto Social</span>
           </div>
           <h3>Fundação Fredson Muianga</h3>
           <p class="project-role">Fundador</p>
@@ -1472,7 +1476,7 @@
         <article class="project-card reveal">
           <div class="project-card-top">
             <span class="project-icon"><i data-lucide="school"></i></span>
-            <span class="project-tag">Education &amp; Career</span>
+            <span class="project-tag">Educação &amp; Carreira</span>
           </div>
           <h3>Escola Seiva da Nação</h3>
           <p class="desc">Escola focada em oferecer educação de qualidade e formação prática em tecnologia, preparando jovens moçambicanos para o mercado de trabalho actual.</p>
@@ -1488,7 +1492,7 @@
     <div class="container">
       <p class="eyebrow reveal">IMPACTO</p>
       <p class="impact-quote reveal">Construir oportunidades que permanecem para além de um projecto.</p>
-      <p class="impact-body reveal">O trabalho de Fredson Muianga liga negócios, educação, tecnologia, cultura e desenvolvimento social — da Fundação Fredson Muianga à ADIEP, da Escola Seiva da Nação à Muianga Carreiras. Cada iniciativa nasce do mesmo princípio: criar estrutura e oportunidade para a juventude moçambicana, de forma a durar para além de qualquer projecto isolado.</p>
+      <p class="impact-body reveal">O trabalho de Fredson Muianga liga negócios, educação, tecnologia, cultura e desenvolvimento social, da Fundação Fredson Muianga à ADIEP, da Escola Seiva da Nação à Muianga Carreiras. Cada iniciativa nasce do mesmo princípio: criar estrutura e oportunidade para a juventude moçambicana, de forma a durar para além de qualquer projecto isolado.</p>
     </div>
   </section>
 
@@ -1513,7 +1517,7 @@
       <div class="networking-head reveal">
         <p class="eyebrow">NETWORKING</p>
         <h2>Não estou à procura apenas de clientes.</h2>
-        <p class="networking-lede">Estou aberto a pessoas — pessoas com ideias, pessoas que pensam, pessoas que sonham, pessoas que querem aprender, pessoas que estão a construir, pessoas que querem colaborar, pessoas que têm algo para ensinar e pessoas que querem criar alguma coisa maior do que elas próprias.</p>
+        <p class="networking-lede">Estou aberto a pessoas: pessoas com ideias, pessoas que pensam, pessoas que sonham, pessoas que querem aprender, pessoas que estão a construir, pessoas que querem colaborar, pessoas que têm algo para ensinar e pessoas que querem criar alguma coisa maior do que elas próprias.</p>
         <ul class="networking-tags">
           <li>Ideias</li>
           <li>Pensamento</li>
@@ -1523,7 +1527,7 @@
           <li>Ensino</li>
           <li>Visão colectiva</li>
         </ul>
-        <p class="networking-narrative">Grande parte da minha caminhada aconteceu através de pessoas — pessoas que conheci, que me ensinaram, com quem discuti ideias, que confiaram em mim e que abriram portas que eu sozinho não teria encontrado. Continuo a acreditar que algumas das melhores oportunidades da vida começam, simplesmente, com uma conversa.</p>
+        <p class="networking-narrative">Grande parte da minha caminhada aconteceu através de pessoas: pessoas que conheci, que me ensinaram, com quem discuti ideias, que confiaram em mim e que abriram portas que eu sozinho não teria encontrado. Continuo a acreditar que algumas das melhores oportunidades da vida começam, simplesmente, com uma conversa.</p>
         <div class="hero-ctas">
           <button type="button" class="btn btn-primary js-open-networking" style="cursor:pointer; font-family: var(--sans);" data-motivo="Quero conhecer-te">Quero conhecer o Fredson</button>
         </div>
@@ -1577,13 +1581,13 @@
         <div class="lesson-card reveal">
           <span class="lesson-num">02</span>
           <h3>Não Tenhas Pressa em Parecer Grande</h3>
-          <p>Constrói primeiro. A aparência impressiona durante alguns minutos — o valor precisa de permanecer.</p>
+          <p>Constrói primeiro. A aparência impressiona durante alguns minutos, mas o valor precisa de permanecer.</p>
         </div>
 
         <div class="lesson-card reveal">
           <span class="lesson-num">03</span>
           <h3>Conhece Pessoas</h3>
-          <p>Uma conversa pode mudar uma direcção. Uma pessoa pode apresentar outra. Uma relação pode transformar-se numa oportunidade. Networking não é coleccionar contactos — é construir relações.</p>
+          <p>Uma conversa pode mudar uma direcção. Uma pessoa pode apresentar outra. Uma relação pode transformar-se numa oportunidade. Networking não é coleccionar contactos. É construir relações.</p>
         </div>
 
         <div class="lesson-card reveal">
@@ -1755,7 +1759,7 @@
         <div class="reveal">
           <p class="eyebrow">CONTACTO</p>
           <h2 class="contact-headline">Tem um projecto, uma oportunidade ou uma ideia?</h2>
-          <p>Escreva ou ligue directamente. Respondo pessoalmente a cada contacto — empresários, investidores, instituições, organizações, artistas e parceiros são todos bem-vindos.</p>
+          <p>Escreva ou ligue directamente. Respondo pessoalmente a cada contacto: empresários, investidores, instituições, organizações, artistas e parceiros são todos bem-vindos.</p>
           <a class="btn btn-primary" style="background: var(--ink); color: var(--bg); border-color: var(--ink);" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer">Vamos conversar</a>
         </div>
         <div class="reveal contact-details">
@@ -1774,7 +1778,7 @@
       <div class="reveal">
         <p class="eyebrow">NETWORKING</p>
         <h2>A próxima conversa pode ser importante.</h2>
-        <p>Não sei onde esta caminhada vai terminar — ainda estou a descobrir. Mas sei que algumas das melhores coisas que construí começaram com pessoas que, em algum momento, decidiram simplesmente conversar comigo.</p>
+        <p>Não sei onde esta caminhada vai terminar. Ainda estou a descobrir. Mas sei que algumas das melhores coisas que construí começaram com pessoas que, em algum momento, decidiram simplesmente conversar comigo.</p>
         <button type="button" class="btn btn-primary js-open-networking" style="color: var(--bg); background: var(--ink); border-color: var(--ink); cursor:pointer; font-family: var(--sans);" data-motivo="Quero simplesmente conversar">Vamos conversar</button>
       </div>
     </div>

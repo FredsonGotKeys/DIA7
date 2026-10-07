@@ -30,7 +30,7 @@ INDEX_FILE = BASE_DIR / "index.html"
 BACKUP_FILE = BASE_DIR / "index.html.bak"
 OG_IMAGE_HTML = BASE_DIR / "og-image.html"
 
-OG_TITLE = "Fredson Muianga — Conselheiro · Consultor · Empresário · Filantropo"
+OG_TITLE = "Fredson Muianga — Escritor · Consultor · Empresário · Filantropo"
 OG_DESCRIPTION = (
     "Fundador da SonhoEuropa, Muianga Carreiras e ADIEP. "
     "Consultoria, Mentoria e Educação Digital em Maputo, Moçambique."
@@ -184,7 +184,7 @@ def gerar_og_image_html(site_url: str) -> None:
 <title>OG Image — Fredson Muianga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital@1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:ital@1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   html, body {{
@@ -206,7 +206,7 @@ def gerar_og_image_html(site_url: str) -> None:
     flex-shrink: 0;
     width: 260px;
     height: 260px;
-    border-radius: 24px;
+    border-radius: 6px;
     object-fit: cover;
     object-position: top center;
     border: 1px solid #E1DACB;
@@ -217,15 +217,17 @@ def gerar_og_image_html(site_url: str) -> None:
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 4.2rem;
   }}
   .text {{ min-width: 0; }}
   h1 {{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4.4rem;
-    line-height: 0.98;
-    letter-spacing: 3px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3.6rem;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
     color: #1C1B1A;
     margin-bottom: 18px;
   }}
@@ -250,7 +252,7 @@ def gerar_og_image_html(site_url: str) -> None:
     {foto_bloco}
     <div class="text">
       <h1>FREDSON<br>MUIANGA</h1>
-      <p class="tagline">Conselheiro · Consultor · Empresário · Filantropo</p>
+      <p class="tagline">Escritor · Consultor · Empresário · Filantropo</p>
       <p class="footer">{site_url}</p>
     </div>
   </div>

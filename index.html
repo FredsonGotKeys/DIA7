@@ -558,7 +558,10 @@
     line-height: 1.75;
     color: var(--ink-2);
     margin: 0 0 1.1rem;
+    display: none;
   }
+
+  .about-body .project-more { margin: 0 0 1.5rem; }
 
   .about-meta {
     display: flex;
@@ -723,6 +726,10 @@
     color: var(--ink-2);
     margin: 0;
     flex: 1;
+  }
+
+  .project-grid .project-card p.desc {
+    display: none;
   }
 
   .project-link {
@@ -1153,7 +1160,10 @@
     line-height: 1.7;
     color: var(--ink-2);
     margin: 0;
+    display: none;
   }
+
+  .lesson-card .project-more { margin-top: 0.7rem; }
 
   /* ══════════════ ADIEP CTA ══════════════ */
   .adiep-cta {
@@ -1436,6 +1446,7 @@
           <div class="about-body">
             <p>Fredson Muianga detém e lidera iniciativas que vão da consultoria empresarial e tecnologia à educação, carreira, cultura e impacto social, sempre com a mesma lógica: identificar um problema real e construir uma estrutura duradoura para o resolver.</p>
             <p>O seu trabalho atravessa a SonhoEuropa (poupança colectiva digital), a Muianga Carreiras (emprego e desenvolvimento profissional), a Muianga Consultores (consultoria estratégica), a Fundação Fredson Muianga (impacto social) e a gestão de talentos na área da música e das artes.</p>
+            <button type="button" class="project-more js-read-about">Ler mais sobre o meu percurso &rarr;</button>
           </div>
           <div class="about-meta">
             <div class="about-meta-item">
@@ -1697,42 +1708,49 @@
           <span class="lesson-num">01</span>
           <h3>Aprende a Lidar com Pessoas</h3>
           <p>Conhecimento abre portas, mas saber lidar com pessoas é o que as mantém abertas.</p>
+          <button type="button" class="project-more js-read-lesson">Ler mais &rarr;</button>
         </div>
 
         <div class="lesson-card reveal">
           <span class="lesson-num">02</span>
           <h3>Não Tenhas Pressa em Parecer Grande</h3>
           <p>Constrói primeiro. A aparência impressiona durante alguns minutos, mas o valor precisa de permanecer.</p>
+          <button type="button" class="project-more js-read-lesson">Ler mais &rarr;</button>
         </div>
 
         <div class="lesson-card reveal">
           <span class="lesson-num">03</span>
           <h3>Conhece Pessoas</h3>
           <p>Uma conversa pode mudar uma direcção. Uma pessoa pode apresentar outra. Uma relação pode transformar-se numa oportunidade. Networking não é coleccionar contactos. É construir relações.</p>
+          <button type="button" class="project-more js-read-lesson">Ler mais &rarr;</button>
         </div>
 
         <div class="lesson-card reveal">
           <span class="lesson-num">04</span>
           <h3>Aprende com Quem Sabe Mais</h3>
           <p>Não precisas de ser a pessoa mais inteligente da sala. Às vezes, basta ter humildade suficiente para ouvir.</p>
+          <button type="button" class="project-more js-read-lesson">Ler mais &rarr;</button>
         </div>
 
         <div class="lesson-card reveal">
           <span class="lesson-num">05</span>
           <h3>Não Tenhas Medo de Começar Pequeno</h3>
           <p>Muitos projectos começam como uma ideia que ainda ninguém leva muito a sério. O importante é começar.</p>
+          <button type="button" class="project-more js-read-lesson">Ler mais &rarr;</button>
         </div>
 
         <div class="lesson-card reveal">
           <span class="lesson-num">06</span>
           <h3>Discute Ideias</h3>
           <p>Não concordar com alguém não significa deixar de o respeitar. Boas conversas também nascem do confronto de ideias.</p>
+          <button type="button" class="project-more js-read-lesson">Ler mais &rarr;</button>
         </div>
 
         <div class="lesson-card reveal">
           <span class="lesson-num">07</span>
           <h3>Mantém-te em Movimento</h3>
           <p>Ainda não cheguei onde quero chegar. Mas vou caminhando. E, enquanto caminho, continuo a aprender, a conhecer pessoas, a construir projectos e a procurar novas possibilidades.</p>
+          <button type="button" class="project-more js-read-lesson">Ler mais &rarr;</button>
         </div>
 
       </div>
@@ -1947,6 +1965,17 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="textModal" role="dialog" aria-modal="true" aria-labelledby="textModalTitle" aria-hidden="true">
+  <div class="modal-card">
+    <button type="button" class="modal-close" id="textModalClose" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <p class="eyebrow" id="textModalEyebrow"></p>
+    <h3 id="textModalTitle" style="font-family: var(--serif); font-weight: 700; font-size: 1.4rem; margin: 0 0 1rem;"></h3>
+    <div id="textModalBody" style="font-size: 0.95rem; line-height: 1.75; color: var(--ink-2);"></div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="networkingModal" role="dialog" aria-modal="true" aria-labelledby="networkingModalTitle" aria-hidden="true">
   <div class="modal-card">
     <button type="button" class="modal-close" id="networkingModalClose" aria-label="Fechar">
@@ -2063,6 +2092,58 @@
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && detailModal.classList.contains('is-open')) { closeDetailModal(); }
+  });
+
+  // Modal de texto genérico ("Ler mais")
+  var textModal = document.getElementById('textModal');
+  var textModalEyebrow = document.getElementById('textModalEyebrow');
+  var textModalTitle = document.getElementById('textModalTitle');
+  var textModalBody = document.getElementById('textModalBody');
+  var textLastFocus = null;
+
+  function openTextModal(eyebrow, title, bodyHTML) {
+    textLastFocus = document.activeElement;
+    textModalEyebrow.textContent = eyebrow;
+    textModalTitle.textContent = title;
+    textModalBody.innerHTML = bodyHTML;
+    textModal.classList.add('is-open');
+    textModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('textModalClose').focus();
+  }
+
+  function closeTextModal() {
+    textModal.classList.remove('is-open');
+    textModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (textLastFocus) { textLastFocus.focus(); }
+  }
+
+  document.querySelectorAll('.js-read-lesson').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.lesson-card');
+      var title = card.querySelector('h3').textContent;
+      var body = '<p>' + card.querySelector('p').textContent + '</p>';
+      openTextModal('O QUE APRENDI PELO CAMINHO', title, body);
+    });
+  });
+
+  document.querySelectorAll('.js-read-about').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var paragraphs = Array.from(btn.closest('.about-body').querySelectorAll('p'));
+      var body = paragraphs.map(function (p) { return '<p>' + p.innerHTML + '</p>'; }).join('');
+      openTextModal('SOBRE', 'O meu percurso', body);
+    });
+  });
+
+  document.getElementById('textModalClose').addEventListener('click', closeTextModal);
+
+  textModal.addEventListener('click', function (e) {
+    if (e.target === textModal) { closeTextModal(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && textModal.classList.contains('is-open')) { closeTextModal(); }
   });
 
   // Copiar link do livro

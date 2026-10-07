@@ -9,6 +9,7 @@
 <meta property="og:image" content="https://fredsonmuianga.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fredson Muianga — Consultor Multifuncional, Escritor e Filantropo">
 <meta property="og:url" content="https://fredsonmuianga.com">
 <meta property="og:locale" content="pt_MZ">
 <meta property="og:site_name" content="Fredson Muianga">
@@ -22,7 +23,11 @@
 <meta name="author" content="Fredson Muianga">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23121212'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23F6F5F1' text-anchor='middle'%3EFM%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 
 <title>Fredson Muianga — Consultor Multifuncional · Escritor · Filantropo</title>
 
@@ -398,10 +403,13 @@
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
+    font-family: var(--sans);
     font-size: 0.82rem;
     letter-spacing: 0.5px;
     padding: 0.9rem 1.5rem;
     border: 1px solid currentColor;
+    background: none;
+    cursor: pointer;
     transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
   }
 
@@ -422,16 +430,39 @@
 
   .btn-ghost:hover { border-color: var(--bg); transform: translateY(-1px); }
 
-  .hero-photo-wrap {
+  .hero-text {
     position: relative;
-    aspect-ratio: 4 / 4.3;
-    max-width: 300px;
-    margin: 0 auto;
-    width: 100%;
+    z-index: 1;
+  }
+
+  .hero-photo-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: auto;
+    max-width: none;
+  }
+
+  .hero-photo-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(13,13,13,0.52);
+    z-index: 1;
   }
 
   @media (min-width: 900px) {
-    .hero-photo-wrap { aspect-ratio: 4 / 5; max-width: 420px; }
+    .hero-photo-wrap {
+      position: relative;
+      inset: auto;
+      z-index: 1;
+      aspect-ratio: 4 / 5;
+      max-width: 420px;
+      margin: 0;
+      width: 100%;
+    }
+
+    .hero-photo-wrap::after { display: none; }
   }
 
   .hero-photo-wrap img,
@@ -447,6 +478,13 @@
     mask-image: radial-gradient(ellipse 58% 62% at center, #000 35%, transparent 96%);
   }
 
+  @media (max-width: 899px) {
+    .hero-photo-wrap img {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+
   .hero-photo-wrap .avatar-fallback {
     background: #1A1A1A;
     color: var(--bg);
@@ -460,10 +498,6 @@
 
   .hero-photo-frame {
     display: none;
-  }
-
-  @media (min-width: 900px) {
-    .hero-photo-wrap { margin: 0; }
   }
 
   .scroll-cue {

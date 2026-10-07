@@ -115,7 +115,7 @@ uma pré-visualização correcta.
 ## 7. Projectos e contactos reais já configurados
 
 - **Telefone**: +258 84 628 3051 · +258 87 625 2006
-- **Email**: contacto@fredsonmuianga.com
+- **Email**: fredsonyb@gmail.com
 - **WhatsApp**: https://wa.me/258846283051
 - **Instagram**: instagram.com/muianga.oficial
 - **Facebook**: facebook.com/share/1B5XpVw2Yw

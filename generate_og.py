@@ -30,10 +30,10 @@ INDEX_FILE = BASE_DIR / "index.html"
 BACKUP_FILE = BASE_DIR / "index.html.bak"
 OG_IMAGE_HTML = BASE_DIR / "og-image.html"
 
-OG_TITLE = "Fredson Muianga — Escritor · Consultor · Empresário · Filantropo"
+OG_TITLE = "Fredson Muianga — Empresário · Consultor · Escritor · Fundador"
 OG_DESCRIPTION = (
-    "Fundador da SonhoEuropa, Muianga Carreiras e ADIEP. "
-    "Consultoria, Mentoria e Educação Digital em Maputo, Moçambique."
+    "Negócios, tecnologia, educação e cultura em Moçambique. Fundador da "
+    "SonhoEuropa, Muianga Carreiras e Muianga Consultores — a partir de Maputo."
 )
 
 OG_TAG_PATTERN = re.compile(
@@ -184,13 +184,13 @@ def gerar_og_image_html(site_url: str) -> None:
 <title>OG Image — Fredson Muianga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:ital@1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   html, body {{
     width: 1200px;
     height: 630px;
-    background: #F5F1E8;
+    background: #0D0D0D;
     font-family: 'DM Sans', sans-serif;
     overflow: hidden;
   }}
@@ -209,11 +209,12 @@ def gerar_og_image_html(site_url: str) -> None:
     border-radius: 6px;
     object-fit: cover;
     object-position: top center;
-    border: 1px solid #E1DACB;
+    border: 1px solid #BBA573;
+    filter: grayscale(0.4) contrast(1.05);
   }}
   .photo-fallback {{
-    background: #1F2A24;
-    color: #F5F1E8;
+    background: #1A1A1A;
+    color: #F6F5F1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,21 +229,22 @@ def gerar_og_image_html(site_url: str) -> None:
     font-size: 3.6rem;
     line-height: 1.1;
     letter-spacing: 0.5px;
-    color: #1C1B1A;
+    color: #F6F5F1;
     margin-bottom: 18px;
   }}
   p.tagline {{
-    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
     font-style: italic;
+    font-weight: 500;
     font-size: 1.55rem;
-    color: #4A4642;
+    color: #BBA573;
     margin-bottom: 28px;
   }}
   p.footer {{
     font-size: 1.05rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #9C6B2E;
+    color: #8B8678;
     font-weight: 500;
   }}
 </style>
@@ -252,7 +254,7 @@ def gerar_og_image_html(site_url: str) -> None:
     {foto_bloco}
     <div class="text">
       <h1>FREDSON<br>MUIANGA</h1>
-      <p class="tagline">Escritor · Consultor · Empresário · Filantropo</p>
+      <p class="tagline">Empresário · Consultor · Escritor · Fundador</p>
       <p class="footer">{site_url}</p>
     </div>
   </div>

@@ -30,7 +30,7 @@ INDEX_FILE = BASE_DIR / "index.html"
 BACKUP_FILE = BASE_DIR / "index.html.bak"
 OG_IMAGE_HTML = BASE_DIR / "og-image.html"
 
-OG_TITLE = "Fredson Muianga — Empresário · Consultor · Escritor · Fundador"
+OG_TITLE = "Fredson Muianga — Consultor Multifuncional · Escritor · Filantropo"
 OG_DESCRIPTION = (
     "Negócios, tecnologia, educação e cultura em Moçambique. Fundador da "
     "SonhoEuropa, Muianga Carreiras e Muianga Consultores — a partir de Maputo."
@@ -254,7 +254,7 @@ def gerar_og_image_html(site_url: str) -> None:
     {foto_bloco}
     <div class="text">
       <h1>FREDSON<br>MUIANGA</h1>
-      <p class="tagline">Empresário · Consultor · Escritor · Fundador</p>
+      <p class="tagline">Consultor Multifuncional · Escritor · Filantropo</p>
       <p class="footer">{site_url}</p>
     </div>
   </div>

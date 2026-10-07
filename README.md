@@ -44,8 +44,8 @@ E aceder a `http://localhost:8000`.
 
 A página está organizada em secções, navegáveis pela barra fixa no topo:
 
-1. **Hero** — nome, posicionamento ("Empresário · Consultor · Escritor ·
-   Fundador") e duas chamadas à acção: "Conhecer o meu trabalho" e "Falar
+1. **Hero** — nome, posicionamento ("Consultor Multifuncional · Escritor ·
+   Filantropo") e duas chamadas à acção: "Conhecer o meu trabalho" e "Falar
    comigo".
 2. **Sobre** — apresentação executiva.
 3. **Áreas de Actuação** — seis categorias estratégicas: Business &

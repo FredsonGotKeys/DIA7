@@ -209,6 +209,14 @@
 
   .nav-links a:hover { color: var(--ink); }
 
+  .nav-links a.nav-networking,
+  .mobile-panel a.nav-networking {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .nav-links a.nav-networking:hover { color: var(--accent); }
+
   .nav-cta {
     display: none;
   }
@@ -510,27 +518,26 @@
   .principles {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1.4rem;
+    align-items: baseline;
+    gap: 0.5rem 0;
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
   .principles li {
-    font-size: 0.85rem;
-    color: var(--ink-2);
-    position: relative;
-    padding-left: 1rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--ink);
   }
 
-  .principles li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.5em;
-    width: 5px;
-    height: 1px;
-    background: var(--accent);
+  .principles li:not(:last-child)::after {
+    content: "·";
+    color: var(--accent);
+    font-style: normal;
+    margin: 0 0.7rem;
   }
 
   /* ══════════════ ÁREAS DE ACTUAÇÃO ══════════════ */
@@ -836,6 +843,391 @@
   .contact-details .icn { width: 17px; height: 17px; color: var(--accent); flex-shrink: 0; }
   .contact-details .icn svg { width: 100%; height: 100%; }
 
+  /* ══════════════ NETWORKING ══════════════ */
+  section.networking {
+    background: var(--hero-bg);
+    color: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  section.networking .eyebrow { color: var(--accent-dim); }
+  section.networking .eyebrow::before { background: var(--accent-dim); }
+
+  .networking-head { max-width: 760px; position: relative; z-index: 1; }
+
+  .networking-head h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    line-height: 1.12;
+    margin: 0 0 1.5rem;
+  }
+
+  .networking-lede {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: rgba(246,245,241,0.8);
+    max-width: 58ch;
+    margin: 0 0 1.75rem;
+  }
+
+  .networking-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.7rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.25rem;
+  }
+
+  .networking-tags li {
+    font-size: 0.76rem;
+    letter-spacing: 0.3px;
+    color: rgba(246,245,241,0.88);
+    border: 1px solid var(--hero-line);
+    padding: 0.5rem 0.95rem;
+  }
+
+  .networking-narrative {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+    line-height: 1.65;
+    max-width: 52ch;
+    color: var(--bg);
+    margin: 0 0 2rem;
+    border-left: 1px solid var(--accent-dim);
+    padding-left: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .networking-dots {
+    position: absolute;
+    top: -10%;
+    right: -6%;
+    width: 52%;
+    height: 120%;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .networking-dots svg { width: 100%; height: 100%; }
+  .networking-dots circle { fill: var(--accent-dim); }
+  .networking-dots line { stroke: var(--hero-line); stroke-width: 1; }
+  .networking-dots circle.pulse { animation: dotPulse 3.6s ease-in-out infinite; }
+  .networking-dots circle:nth-child(2).pulse { animation-delay: 0.6s; }
+  .networking-dots circle:nth-child(4).pulse { animation-delay: 1.2s; }
+  .networking-dots circle:nth-child(6).pulse { animation-delay: 1.8s; }
+
+  @keyframes dotPulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+
+  .process-block {
+    margin-top: 3.25rem;
+    padding-top: 3.25rem;
+    border-top: 1px solid var(--hero-line);
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-line1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4.6vw, 2.4rem);
+    margin: 0;
+    color: rgba(246,245,241,0.5);
+  }
+
+  .process-line2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2rem, 6.8vw, 3.4rem);
+    margin: 0.15rem 0 1.5rem;
+    color: var(--bg);
+  }
+
+  .process-body {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(246,245,241,0.78);
+    max-width: 54ch;
+    margin: 0 0 1.75rem;
+  }
+
+  .want-meet {
+    margin-top: 3.25rem;
+    padding-top: 3.25rem;
+    border-top: 1px solid var(--hero-line);
+    position: relative;
+    z-index: 1;
+  }
+
+  .want-meet h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.8vw, 1.7rem);
+    margin: 0 0 1.4rem;
+    max-width: 36ch;
+  }
+
+  .want-meet-list {
+    columns: 2;
+    column-gap: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem;
+  }
+
+  @media (max-width: 699px) {
+    .want-meet-list { columns: 1; }
+  }
+
+  .want-meet-list li {
+    font-size: 0.87rem;
+    color: rgba(246,245,241,0.82);
+    padding: 0.45rem 0 0.45rem 1rem;
+    position: relative;
+    break-inside: avoid;
+  }
+
+  .want-meet-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.95em;
+    width: 5px;
+    height: 1px;
+    background: var(--accent-dim);
+  }
+
+  .want-meet-note {
+    font-size: 0.92rem;
+    color: var(--bg);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ══════════════ APRENDIZADOS ══════════════ */
+  section.lessons { background: var(--bg); }
+
+  .lesson-grid {
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 700px) {
+    .lesson-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .lesson-card {
+    padding: 1.9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 700px) {
+    .lesson-card { padding: 2.1rem 2.5rem 2.1rem 0; }
+    .lesson-card:nth-child(even) { padding-left: 2.5rem; border-left: 1px solid var(--line); }
+  }
+
+  .lesson-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .lesson-card h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0 0 0.6rem;
+  }
+
+  .lesson-card p {
+    font-size: 0.89rem;
+    line-height: 1.7;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  /* ══════════════ ADIEP CTA ══════════════ */
+  .adiep-cta {
+    margin-top: 1.1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .adiep-cta p.eyebrow-mini {
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+
+  .adiep-cta p.copy {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin: 0 0 0.9rem;
+  }
+
+  .adiep-cta .btn { font-size: 0.72rem; padding: 0.6rem 1rem; }
+
+  /* ══════════════ ÚLTIMA CHAMADA ══════════════ */
+  section.last-call { background: var(--bg-soft); }
+
+  .last-call h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 4.4vw, 2.8rem);
+    line-height: 1.18;
+    max-width: 22ch;
+    margin: 0 0 1.5rem;
+  }
+
+  .last-call p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--ink-2);
+    max-width: 54ch;
+    margin: 0 0 2rem;
+  }
+
+  /* ══════════════ MODAL NETWORKING ══════════════ */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(13,13,13,0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+  }
+
+  .modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-card {
+    background: var(--bg);
+    color: var(--ink);
+    max-width: 520px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2.25rem 2rem;
+    position: relative;
+    transform: translateY(14px);
+    transition: transform 0.22s ease;
+  }
+
+  .modal-overlay.is-open .modal-card { transform: translateY(0); }
+
+  .modal-close {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--line);
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+  }
+
+  .modal-close svg { width: 14px; height: 14px; }
+
+  .modal-card p.eyebrow { margin-bottom: 0.9rem; }
+
+  .modal-card h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.45rem;
+    margin: 0 0 0.6rem;
+    padding-right: 1.5rem;
+  }
+
+  .modal-hint {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 1.6rem;
+  }
+
+  .form-field { margin-bottom: 1.1rem; }
+
+  .form-field label {
+    display: block;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    color: var(--ink);
+    padding: 0.5rem 0;
+    outline: none;
+    transition: border-color 0.16s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus { border-color: var(--accent); }
+
+  .form-field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B8678' stroke-width='1.6'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 14px;
+    padding-right: 1.4rem;
+  }
+
+  .form-field textarea { resize: vertical; min-height: 68px; font-family: var(--sans); }
+
+  .modal-submit {
+    width: 100%;
+    justify-content: center;
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+    cursor: pointer;
+    font-family: var(--sans);
+    margin-top: 0.5rem;
+  }
+
+  .modal-submit:hover { background: var(--accent); border-color: var(--accent); }
+
   /* ══════════════ FOOTER ══════════════ */
   footer.site-footer {
     background: var(--hero-bg);
@@ -865,6 +1257,7 @@
       <a href="#areas">Áreas de Actuação</a>
       <a href="#projectos">Projectos</a>
       <a href="#impacto">Impacto</a>
+      <a href="#networking" class="nav-networking">Networking</a>
       <a href="#pensamentos">Pensamentos</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -880,6 +1273,7 @@
   <a href="#areas">Áreas de Actuação</a>
   <a href="#projectos">Projectos</a>
   <a href="#impacto">Impacto</a>
+  <a href="#networking" class="nav-networking">Networking</a>
   <a href="#pensamentos">Pensamentos</a>
   <a href="#contacto">Contacto</a>
   <a class="nav-cta" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer">Falar comigo</a>
@@ -1039,6 +1433,11 @@
           </div>
           <h3>ADIEP</h3>
           <p class="desc">Associação de Desenvolvimento e Inovação Empresarial, voltada para apoiar empreendedores moçambicanos através de formação, networking e acesso a financiamento.</p>
+          <div class="adiep-cta">
+            <p class="eyebrow-mini">Queres fazer parte da ADIEP?</p>
+            <p class="copy">Se és empresário, empreendedor ou profissional interessado em desenvolvimento empresarial, inovação, networking e criação de oportunidades, entra em contacto para conheceres melhor a associação e saberes como participar.</p>
+            <a class="btn btn-primary" style="color: var(--ink); background: transparent; border-color: var(--ink);" href="https://wa.me/258846283051?text=Olá%2C%20quero%20saber%20mais%20sobre%20a%20ADIEP%20e%20como%20posso%20participar." target="_blank" rel="noopener noreferrer">Quero fazer parte da ADIEP</a>
+          </div>
         </article>
 
         <article class="project-card reveal">
@@ -1090,6 +1489,128 @@
       <p class="eyebrow reveal">IMPACTO</p>
       <p class="impact-quote reveal">Construir oportunidades que permanecem para além de um projecto.</p>
       <p class="impact-body reveal">O trabalho de Fredson Muianga liga negócios, educação, tecnologia, cultura e desenvolvimento social — da Fundação Fredson Muianga à ADIEP, da Escola Seiva da Nação à Muianga Carreiras. Cada iniciativa nasce do mesmo princípio: criar estrutura e oportunidade para a juventude moçambicana, de forma a durar para além de qualquer projecto isolado.</p>
+    </div>
+  </section>
+
+  <section class="networking" id="networking">
+    <div class="container">
+      <div class="networking-dots" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none">
+          <line x1="60" y1="80" x2="210" y2="150"></line>
+          <line x1="210" y1="150" x2="150" y2="300"></line>
+          <line x1="210" y1="150" x2="330" y2="220"></line>
+          <line x1="330" y1="220" x2="280" y2="350"></line>
+          <line x1="150" y1="300" x2="280" y2="350"></line>
+          <line x1="60" y1="80" x2="150" y2="300"></line>
+          <circle class="pulse" cx="60" cy="80" r="5"></circle>
+          <circle class="pulse" cx="210" cy="150" r="6"></circle>
+          <circle class="pulse" cx="330" cy="220" r="4.5"></circle>
+          <circle class="pulse" cx="150" cy="300" r="5"></circle>
+          <circle class="pulse" cx="280" cy="350" r="4.5"></circle>
+        </svg>
+      </div>
+
+      <div class="networking-head reveal">
+        <p class="eyebrow">NETWORKING</p>
+        <h2>Não estou à procura apenas de clientes.</h2>
+        <p class="networking-lede">Estou aberto a pessoas — pessoas com ideias, pessoas que pensam, pessoas que sonham, pessoas que querem aprender, pessoas que estão a construir, pessoas que querem colaborar, pessoas que têm algo para ensinar e pessoas que querem criar alguma coisa maior do que elas próprias.</p>
+        <ul class="networking-tags">
+          <li>Ideias</li>
+          <li>Pensamento</li>
+          <li>Aprendizagem</li>
+          <li>Construção</li>
+          <li>Colaboração</li>
+          <li>Ensino</li>
+          <li>Visão colectiva</li>
+        </ul>
+        <p class="networking-narrative">Grande parte da minha caminhada aconteceu através de pessoas — pessoas que conheci, que me ensinaram, com quem discuti ideias, que confiaram em mim e que abriram portas que eu sozinho não teria encontrado. Continuo a acreditar que algumas das melhores oportunidades da vida começam, simplesmente, com uma conversa.</p>
+        <div class="hero-ctas">
+          <button type="button" class="btn btn-primary js-open-networking" style="cursor:pointer; font-family: var(--sans);" data-motivo="Quero conhecer-te">Quero conhecer o Fredson</button>
+        </div>
+      </div>
+
+      <div class="process-block reveal">
+        <p class="process-line1">AINDA NÃO CHEGUEI.</p>
+        <p class="process-line2">MAS VOU CAMINHANDO.</p>
+        <p class="process-body">Talvez esta seja uma das coisas que mais aprendi: não precisamos ter a vida completamente resolvida para começar a construir alguma coisa. Precisamos apenas continuar.</p>
+      </div>
+
+      <div class="want-meet reveal">
+        <h3>Gostaria de conhecer pessoas que...</h3>
+        <ul class="want-meet-list">
+          <li>Têm ideias</li>
+          <li>Estão a construir alguma coisa</li>
+          <li>Querem aprender</li>
+          <li>Querem ensinar</li>
+          <li>Procuram parceiros</li>
+          <li>Têm projectos sociais</li>
+          <li>Trabalham com tecnologia</li>
+          <li>Trabalham com negócios</li>
+          <li>Trabalham com educação</li>
+          <li>Trabalham com cultura e criatividade</li>
+          <li>Querem desenvolver Moçambique</li>
+          <li>Têm uma visão internacional</li>
+          <li>Não têm medo de começar</li>
+        </ul>
+        <p class="want-meet-note">Se te identificas com alguma destas coisas, fala comigo.</p>
+        <div class="hero-ctas">
+          <button type="button" class="btn btn-ghost js-open-networking" style="cursor:pointer; font-family: var(--sans);" data-motivo="Quero fazer networking">Entrar em contacto</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lessons" id="aprendizados">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">O QUE APRENDI PELO CAMINHO</p>
+        <h2>Alguns princípios que levo comigo</h2>
+      </div>
+      <div class="lesson-grid">
+
+        <div class="lesson-card reveal">
+          <span class="lesson-num">01</span>
+          <h3>Aprende a Lidar com Pessoas</h3>
+          <p>Conhecimento abre portas, mas saber lidar com pessoas é o que as mantém abertas.</p>
+        </div>
+
+        <div class="lesson-card reveal">
+          <span class="lesson-num">02</span>
+          <h3>Não Tenhas Pressa em Parecer Grande</h3>
+          <p>Constrói primeiro. A aparência impressiona durante alguns minutos — o valor precisa de permanecer.</p>
+        </div>
+
+        <div class="lesson-card reveal">
+          <span class="lesson-num">03</span>
+          <h3>Conhece Pessoas</h3>
+          <p>Uma conversa pode mudar uma direcção. Uma pessoa pode apresentar outra. Uma relação pode transformar-se numa oportunidade. Networking não é coleccionar contactos — é construir relações.</p>
+        </div>
+
+        <div class="lesson-card reveal">
+          <span class="lesson-num">04</span>
+          <h3>Aprende com Quem Sabe Mais</h3>
+          <p>Não precisas de ser a pessoa mais inteligente da sala. Às vezes, basta ter humildade suficiente para ouvir.</p>
+        </div>
+
+        <div class="lesson-card reveal">
+          <span class="lesson-num">05</span>
+          <h3>Não Tenhas Medo de Começar Pequeno</h3>
+          <p>Muitos projectos começam como uma ideia que ainda ninguém leva muito a sério. O importante é começar.</p>
+        </div>
+
+        <div class="lesson-card reveal">
+          <span class="lesson-num">06</span>
+          <h3>Discute Ideias</h3>
+          <p>Não concordar com alguém não significa deixar de o respeitar. Boas conversas também nascem do confronto de ideias.</p>
+        </div>
+
+        <div class="lesson-card reveal">
+          <span class="lesson-num">07</span>
+          <h3>Mantém-te em Movimento</h3>
+          <p>Ainda não cheguei onde quero chegar. Mas vou caminhando. E, enquanto caminho, continuo a aprender, a conhecer pessoas, a construir projectos e a procurar novas possibilidades.</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -1248,6 +1769,17 @@
     </div>
   </section>
 
+  <section class="last-call" id="networking-final">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">NETWORKING</p>
+        <h2>A próxima conversa pode ser importante.</h2>
+        <p>Não sei onde esta caminhada vai terminar — ainda estou a descobrir. Mas sei que algumas das melhores coisas que construí começaram com pessoas que, em algum momento, decidiram simplesmente conversar comigo.</p>
+        <button type="button" class="btn btn-primary js-open-networking" style="color: var(--bg); background: var(--ink); border-color: var(--ink); cursor:pointer; font-family: var(--sans);" data-motivo="Quero simplesmente conversar">Vamos conversar</button>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -1256,6 +1788,55 @@
     <a href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer">Falar comigo →</a>
   </div>
 </footer>
+
+<div class="modal-overlay" id="networkingModal" role="dialog" aria-modal="true" aria-labelledby="networkingModalTitle" aria-hidden="true">
+  <div class="modal-card">
+    <button type="button" class="modal-close" id="networkingModalClose" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <p class="eyebrow">VAMOS CONVERSAR</p>
+    <h3 id="networkingModalTitle">Conta-me um pouco sobre ti</h3>
+    <p class="modal-hint">Não precisas de ter uma proposta pronta. Uma boa conversa já é um começo.</p>
+    <form id="networkingForm">
+      <div class="form-field">
+        <label for="nwNome">Nome</label>
+        <input type="text" id="nwNome" name="nome" required>
+      </div>
+      <div class="form-field">
+        <label for="nwEmail">Email</label>
+        <input type="email" id="nwEmail" name="email" required>
+      </div>
+      <div class="form-field">
+        <label for="nwContacto">Contacto / WhatsApp</label>
+        <input type="text" id="nwContacto" name="contacto">
+      </div>
+      <div class="form-field">
+        <label for="nwCidade">Cidade / País</label>
+        <input type="text" id="nwCidade" name="cidade">
+      </div>
+      <div class="form-field">
+        <label for="nwMotivo">Motivo do contacto</label>
+        <select id="nwMotivo" name="motivo">
+          <option>Quero conhecer o Fredson</option>
+          <option>Quero trocar ideias</option>
+          <option>Tenho uma ideia</option>
+          <option>Quero propor uma parceria</option>
+          <option>Quero fazer networking</option>
+          <option>Quero falar sobre negócios</option>
+          <option>Quero falar sobre cultura</option>
+          <option>Quero falar sobre tecnologia</option>
+          <option>Quero simplesmente conversar</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="nwMensagem">Mensagem</label>
+        <textarea id="nwMensagem" name="mensagem"></textarea>
+      </div>
+      <button type="submit" class="btn modal-submit">Enviar via WhatsApp</button>
+    </form>
+  </div>
+</div>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
@@ -1283,6 +1864,70 @@
   });
   panel.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', closePanel);
+  });
+
+  // Networking modal
+  var nwModal = document.getElementById('networkingModal');
+  var nwForm = document.getElementById('networkingForm');
+  var nwMotivoSelect = document.getElementById('nwMotivo');
+  var nwLastFocus = null;
+
+  function openNetworkingModal(motivo) {
+    nwLastFocus = document.activeElement;
+    if (motivo) { nwMotivoSelect.value = motivo; }
+    nwModal.classList.add('is-open');
+    nwModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    var firstField = document.getElementById('nwNome');
+    if (firstField) { firstField.focus(); }
+  }
+
+  function closeNetworkingModal() {
+    nwModal.classList.remove('is-open');
+    nwModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (nwLastFocus) { nwLastFocus.focus(); }
+  }
+
+  document.querySelectorAll('.js-open-networking').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openNetworkingModal(btn.getAttribute('data-motivo'));
+    });
+  });
+
+  document.getElementById('networkingModalClose').addEventListener('click', closeNetworkingModal);
+
+  nwModal.addEventListener('click', function (e) {
+    if (e.target === nwModal) { closeNetworkingModal(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nwModal.classList.contains('is-open')) { closeNetworkingModal(); }
+  });
+
+  nwForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var nome = document.getElementById('nwNome').value.trim();
+    var email = document.getElementById('nwEmail').value.trim();
+    var contacto = document.getElementById('nwContacto').value.trim();
+    var cidade = document.getElementById('nwCidade').value.trim();
+    var motivo = nwMotivoSelect.value;
+    var mensagem = document.getElementById('nwMensagem').value.trim();
+
+    var linhas = [
+      'Olá Fredson, vim pelo seu site.',
+      'Nome: ' + nome,
+      'Email: ' + email
+    ];
+    if (contacto) { linhas.push('Contacto/WhatsApp: ' + contacto); }
+    if (cidade) { linhas.push('Cidade/País: ' + cidade); }
+    linhas.push('Motivo: ' + motivo);
+    if (mensagem) { linhas.push('Mensagem: ' + mensagem); }
+
+    var texto = encodeURIComponent(linhas.join('\n'));
+    window.open('https://wa.me/258846283051?text=' + texto, '_blank', 'noopener,noreferrer');
+    closeNetworkingModal();
+    nwForm.reset();
   });
 
   // Scroll reveal

@@ -185,13 +185,13 @@ def gerar_og_image_html(site_url: str) -> None:
 <title>OG Image — Fredson Muianga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   html, body {{
     width: 1200px;
     height: 630px;
-    background: #111318;
+    background: #15171B;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
   }}
@@ -210,42 +210,41 @@ def gerar_og_image_html(site_url: str) -> None:
     border-radius: 6px;
     object-fit: cover;
     object-position: top center;
-    border: 1px solid #B69A65;
-    filter: grayscale(0.1) contrast(1.05) saturate(1.1);
+    border: 1px solid #496BFF;
+    filter: contrast(1.05) saturate(1.05);
   }}
   .photo-fallback {{
-    background: #1A1C22;
-    color: #F6F5F1;
+    background: #1E2027;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
     font-size: 4.2rem;
   }}
   .text {{ min-width: 0; }}
   h1 {{
-    font-family: 'DM Serif Display', serif;
-    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
     font-size: 3.6rem;
     line-height: 1.1;
-    letter-spacing: 0.5px;
-    color: #F6F5F1;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
     margin-bottom: 18px;
   }}
   p.tagline {{
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
     font-size: 1.55rem;
-    color: #B69A65;
+    color: #7389FF;
     margin-bottom: 28px;
   }}
   p.footer {{
     font-size: 1.05rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #777777;
+    color: #8A9099;
     font-weight: 500;
   }}
 </style>

@@ -33,23 +33,23 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --bg: #F6F5F1;
-    --bg-soft: #ECECE8;
+    --bg: #FFFFFF;
+    --bg-soft: #F5F6F7;
     --card: #FFFFFF;
-    --ink: #111318;
-    --ink-2: #3A3D44;
-    --muted: #777777;
-    --line: #E1E1DE;
-    --accent: #B69A65;
-    --accent-dim: #CDB888;
-    --hero-bg: #111318;
+    --ink: #15171B;
+    --ink-2: #4A4F57;
+    --muted: #8A9099;
+    --line: #E6E8EC;
+    --accent: #496BFF;
+    --accent-dim: #7389FF;
+    --hero-bg: #15171B;
     --hero-line: rgba(255,255,255,0.14);
     --status: #2E9E6B;
-    --serif: 'DM Serif Display', serif;
+    --serif: 'Plus Jakarta Sans', sans-serif;
     --sans: 'Inter', sans-serif;
     --dur: 0.5s;
   }
@@ -113,7 +113,7 @@
 
   .section-head h2 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(1.7rem, 4vw, 2.5rem);
     line-height: 1.15;
     margin: 0;
@@ -163,7 +163,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(246,245,241,0.86);
+    background: rgba(255,255,255,0.86);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid transparent;
@@ -185,7 +185,7 @@
 
   .wordmark {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: 0.95rem;
     letter-spacing: 1.5px;
     text-decoration: none;
@@ -324,7 +324,7 @@
     right: 0;
     bottom: 0;
     height: clamp(90px, 16vh, 180px);
-    background: linear-gradient(to bottom, rgba(17,19,24,0) 0%, var(--bg) 100%);
+    background: linear-gradient(to bottom, rgba(21,23,27,0) 0%, var(--bg) 100%);
     pointer-events: none;
     z-index: 2;
   }
@@ -336,10 +336,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(7rem, 26vw, 22rem);
     letter-spacing: 6px;
-    color: rgba(246,245,241,0.035);
+    color: rgba(255,255,255,0.035);
     white-space: nowrap;
     pointer-events: none;
     z-index: 0;
@@ -367,7 +367,7 @@
 
   h1.hero-name {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(2.9rem, 8.6vw, 5.6rem);
     line-height: 0.98;
     letter-spacing: -1px;
@@ -396,10 +396,10 @@
   p.hero-statement {
     font-family: var(--serif);
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-size: clamp(1.05rem, 2vw, 1.3rem);
     line-height: 1.5;
-    color: rgba(246,245,241,0.86);
+    color: rgba(255,255,255,0.86);
     max-width: 46ch;
     margin: 0 0 2.25rem;
   }
@@ -447,78 +447,51 @@
     z-index: 1;
   }
 
-  .hero-photo-wrap {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    width: auto;
-    max-width: none;
-  }
-
-  .hero-photo-wrap::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(17,19,24,0.52);
-    z-index: 1;
+  .hero-mark {
+    display: none;
   }
 
   @media (min-width: 900px) {
-    .hero-photo-wrap {
+    .hero-mark {
+      display: block;
       position: relative;
-      inset: auto;
       z-index: 1;
-      aspect-ratio: 4 / 5;
-      max-width: 420px;
-      margin: 0;
       width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 5;
     }
 
-    .hero-photo-wrap::after { display: none; }
-
-    .hero-photo-wrap::before {
-      content: "";
+    .hero-mark-ring {
       position: absolute;
-      inset: -18%;
-      background: radial-gradient(ellipse 58% 52% at 50% 38%, rgba(205,184,136,0.38) 0%, rgba(205,184,136,0.14) 45%, transparent 72%);
-      z-index: -1;
-      pointer-events: none;
+      top: 6%;
+      left: 10%;
+      width: 76%;
+      aspect-ratio: 1;
+      border: 1px solid var(--hero-line);
+      border-radius: 50%;
     }
-  }
 
-  .hero-photo-wrap img,
-  .hero-photo-wrap .avatar-fallback {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    filter: grayscale(0.1) contrast(1.08) saturate(1.1);
-    -webkit-mask-image: radial-gradient(ellipse 58% 62% at center, #000 35%, transparent 96%);
-    mask-image: radial-gradient(ellipse 58% 62% at center, #000 35%, transparent 96%);
-  }
-
-  @media (max-width: 899px) {
-    .hero-photo-wrap img {
-      -webkit-mask-image: none;
-      mask-image: none;
+    .hero-mark-line {
+      position: absolute;
+      left: 26%;
+      top: 32%;
+      width: 1px;
+      height: 56%;
+      background: linear-gradient(to bottom, var(--hero-line) 0%, var(--accent) 100%);
+      transform: rotate(32deg);
+      transform-origin: top center;
     }
-  }
 
-  .hero-photo-wrap .avatar-fallback {
-    background: #1A1C22;
-    color: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 4.5rem;
-  }
-
-  .hero-photo-frame {
-    display: none;
+    .hero-mark-dot {
+      position: absolute;
+      right: 12%;
+      bottom: 8%;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 10px rgba(73,107,255,0.12);
+    }
   }
 
   .scroll-cue {
@@ -536,9 +509,9 @@
       font-size: 0.7rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(246,245,241,0.5);
+      color: rgba(255,255,255,0.5);
     }
-    .scroll-cue span.line { width: 32px; height: 1px; background: rgba(246,245,241,0.35); display: block; }
+    .scroll-cue span.line { width: 32px; height: 1px; background: rgba(255,255,255,0.35); display: block; }
   }
 
   /* ══════════════ SOBRE ══════════════ */
@@ -550,12 +523,45 @@
   }
 
   @media (min-width: 900px) {
-    .about-grid { grid-template-columns: 0.85fr 1.15fr; gap: 3.25rem; }
+    .about-grid { grid-template-columns: 0.55fr 0.75fr 1fr; gap: 2.5rem; }
+    .about-photo-col { grid-row: span 1; }
+  }
+
+  .about-photo {
+    position: relative;
+    aspect-ratio: 4 / 4.6;
+    max-width: 260px;
+    margin: 0 0 1.75rem;
+    border: 1px solid var(--line);
+  }
+
+  @media (min-width: 900px) {
+    .about-photo { max-width: none; margin: 0; }
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .about-photo::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: -1px;
+    bottom: -1px;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    pointer-events: none;
   }
 
   .about-lede {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(1.3rem, 2.6vw, 1.7rem);
     line-height: 1.4;
     margin: 0 0 1rem;
@@ -605,7 +611,7 @@
   .principles li {
     font-family: var(--serif);
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1rem;
     color: var(--ink);
   }
@@ -643,7 +649,7 @@
 
   .area-row h3 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.05rem;
     letter-spacing: 0.3px;
     margin: 0;
@@ -715,7 +721,7 @@
 
   .project-card h3 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.12rem;
     margin: 0;
   }
@@ -823,7 +829,7 @@
 
   .service-card h3 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.05rem;
     margin: 0;
   }
@@ -854,7 +860,7 @@
   .impact-quote {
     font-family: var(--serif);
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-size: clamp(1.4rem, 3.4vw, 2.1rem);
     line-height: 1.4;
     max-width: 18ch;
@@ -865,7 +871,7 @@
     max-width: 58ch;
     font-size: 0.95rem;
     line-height: 1.8;
-    color: rgba(246,245,241,0.78);
+    color: rgba(255,255,255,0.78);
   }
 
   /* ══════════════ PENSAMENTOS / ESCRITOR ══════════════ */
@@ -910,7 +916,7 @@
 
   .book-card h3 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.6rem;
     margin: 0 0 0.9rem;
   }
@@ -974,7 +980,7 @@
 
   h2.contact-headline {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(1.8rem, 4.4vw, 2.7rem);
     line-height: 1.18;
     margin: 0 0 1.1rem;
@@ -1026,7 +1032,7 @@
 
   .networking-head h2 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(2rem, 5vw, 3.1rem);
     line-height: 1.12;
     margin: 0 0 1.5rem;
@@ -1035,7 +1041,7 @@
   .networking-lede {
     font-size: 0.98rem;
     line-height: 1.8;
-    color: rgba(246,245,241,0.8);
+    color: rgba(255,255,255,0.8);
     max-width: 58ch;
     margin: 0 0 1.75rem;
   }
@@ -1052,7 +1058,7 @@
   .networking-tags li {
     font-size: 0.76rem;
     letter-spacing: 0.3px;
-    color: rgba(246,245,241,0.88);
+    color: rgba(255,255,255,0.88);
     border: 1px solid var(--hero-line);
     padding: 0.5rem 0.95rem;
   }
@@ -1060,7 +1066,7 @@
   .networking-narrative {
     font-family: var(--serif);
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-size: clamp(1.05rem, 2.2vw, 1.4rem);
     line-height: 1.65;
     max-width: 52ch;
@@ -1105,15 +1111,15 @@
 
   .process-line1 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(1.5rem, 4.6vw, 2.4rem);
     margin: 0;
-    color: rgba(246,245,241,0.5);
+    color: rgba(255,255,255,0.5);
   }
 
   .process-line2 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(2rem, 6.8vw, 3.4rem);
     margin: 0.15rem 0 1.5rem;
     color: var(--bg);
@@ -1122,7 +1128,7 @@
   .process-body {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: rgba(246,245,241,0.78);
+    color: rgba(255,255,255,0.78);
     max-width: 54ch;
     margin: 0 0 1.75rem;
   }
@@ -1137,7 +1143,7 @@
 
   .want-meet h3 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(1.25rem, 2.8vw, 1.7rem);
     margin: 0 0 1.4rem;
     max-width: 36ch;
@@ -1157,7 +1163,7 @@
 
   .want-meet-list li {
     font-size: 0.87rem;
-    color: rgba(246,245,241,0.82);
+    color: rgba(255,255,255,0.82);
     padding: 0.45rem 0 0.45rem 1rem;
     position: relative;
     break-inside: avoid;
@@ -1211,7 +1217,7 @@
 
   .lesson-card h3 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
@@ -1258,7 +1264,7 @@
 
   .last-call h2 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(1.7rem, 4.4vw, 2.8rem);
     line-height: 1.18;
     max-width: 22ch;
@@ -1278,7 +1284,7 @@
     position: fixed;
     inset: 0;
     z-index: 200;
-    background: rgba(17,19,24,0.72);
+    background: rgba(21,23,27,0.72);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1329,7 +1335,7 @@
 
   .modal-card h3 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.45rem;
     margin: 0 0 0.6rem;
     padding-right: 1.5rem;
@@ -1421,7 +1427,7 @@
   /* ══════════════ FOOTER ══════════════ */
   footer.site-footer {
     background: var(--hero-bg);
-    color: rgba(246,245,241,0.6);
+    color: rgba(255,255,255,0.6);
     padding: 2.5rem 0;
     font-size: 0.78rem;
   }
@@ -1439,7 +1445,7 @@
     .footer-inner { justify-content: space-between; text-align: left; }
   }
 
-  .footer-inner a { color: rgba(246,245,241,0.85); text-decoration: none; }
+  .footer-inner a { color: rgba(255,255,255,0.85); text-decoration: none; }
   .footer-inner a:hover { color: var(--accent-dim); }
 
   .footer-links {
@@ -1506,16 +1512,16 @@
       <p class="eyebrow">MAPUTO, MOÇAMBIQUE</p>
       <h1 class="hero-name">FREDSON<br>MUIANGA</h1>
       <p class="hero-role">Consultor Multifuncional · Escritor · Filantropo</p>
-      <p class="hero-statement">Construo negócios, pessoas e oportunidades na fronteira entre estratégia, tecnologia, educação e cultura, a partir de Moçambique.</p>
+      <p class="hero-statement">Construo negócios, conecto oportunidades e desenvolvo soluções na intersecção entre tecnologia, educação e empreendedorismo.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="#projectos">Conhecer o meu trabalho</a>
-        <a class="btn btn-ghost" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer">Falar comigo</a>
+        <a class="btn btn-primary" href="#projectos">Explorar o meu trabalho</a>
+        <a class="btn btn-ghost" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer">Contactar-me</a>
       </div>
     </div>
-    <div class="hero-photo-wrap">
-      <div class="hero-photo-frame"></div>
-      <div class="avatar-fallback" id="heroFallback">FM</div>
-      <img src="foto.jpg" alt="Retrato de Fredson Muianga" onload="document.getElementById('heroFallback').style.display='none'" onerror="this.style.display='none'">
+    <div class="hero-mark" aria-hidden="true">
+      <span class="hero-mark-ring"></span>
+      <span class="hero-mark-line"></span>
+      <span class="hero-mark-dot"></span>
     </div>
     <div class="scroll-cue"><span class="line"></span> Descer</div>
   </div>
@@ -1526,6 +1532,11 @@
   <section class="about" id="sobre">
     <div class="container">
       <div class="about-grid">
+        <div class="reveal about-photo-col">
+          <div class="about-photo">
+            <img src="foto.jpg" alt="Retrato de Fredson Muianga" loading="lazy" onerror="this.closest('.about-photo').style.display='none'">
+          </div>
+        </div>
         <div class="reveal">
           <p class="eyebrow">SOBRE</p>
           <p class="about-lede">Um profissional moçambicano que actua na intersecção entre negócios, tecnologia, educação, carreira, cultura e impacto social.</p>
@@ -2072,7 +2083,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <p class="eyebrow" id="textModalEyebrow"></p>
-    <h3 id="textModalTitle" style="font-family: var(--serif); font-weight: 400; font-size: 1.4rem; margin: 0 0 1rem;"></h3>
+    <h3 id="textModalTitle" style="font-family: var(--serif); font-weight: 700; font-size: 1.4rem; margin: 0 0 1rem;"></h3>
     <div id="textModalBody" style="font-size: 0.95rem; line-height: 1.75; color: var(--ink-2);"></div>
   </div>
 </div>

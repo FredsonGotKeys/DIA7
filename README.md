@@ -2,9 +2,9 @@
 
 Website pessoal de nível executivo para Fredson Muianga — empresário,
 consultor, escritor e fundador moçambicano baseado em Maputo. Posicionamento
-editorial/institucional: preto profundo, branco/off-white, grafite e um
-acento dourado metálico discreto, tipografia Playfair Display (serif) + DM
-Sans (sans-serif).
+contemporâneo e mobile-first: cinza-carvão profundo, branco puro, cinza
+subtil e um acento azul eléctrico, tipografia totalmente sans-serif (Plus
+Jakarta Sans + Inter).
 
 ## Estrutura de ficheiros
 

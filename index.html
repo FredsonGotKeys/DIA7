@@ -475,6 +475,15 @@
     }
 
     .hero-photo-wrap::after { display: none; }
+
+    .hero-photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -18%;
+      background: radial-gradient(ellipse 58% 52% at 50% 38%, rgba(188,165,115,0.38) 0%, rgba(188,165,115,0.14) 45%, transparent 72%);
+      z-index: -1;
+      pointer-events: none;
+    }
   }
 
   .hero-photo-wrap img,
@@ -778,6 +787,60 @@
   .project-card.detail-body h3 { font-size: 1.6rem; }
 
   .project-card.detail-body p.desc { font-size: 0.95rem; line-height: 1.75; }
+
+  /* ══════════════ SERVIÇOS (cards) ══════════════ */
+  .service-grid {
+    display: grid;
+    gap: 1.1rem;
+  }
+
+  @media (min-width: 700px) {
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 1.6rem;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .service-icon {
+    width: 26px;
+    height: 26px;
+    color: var(--accent);
+  }
+
+  .service-icon svg { width: 100%; height: 100%; }
+
+  .service-card h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .service-card p {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin: 0;
+    flex: 1;
+  }
+
+  .service-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.2rem;
+  }
 
   /* ══════════════ IMPACTO ══════════════ */
   section.impact {
@@ -1366,12 +1429,43 @@
   .footer-inner {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  @media (min-width: 700px) {
+    .footer-inner { justify-content: space-between; text-align: left; }
   }
 
   .footer-inner a { color: rgba(246,245,241,0.85); text-decoration: none; }
   .footer-inner a:hover { color: var(--accent-dim); }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem 1.3rem;
+    order: 2;
+  }
+
+  .footer-copy { order: 1; white-space: nowrap; }
+
+  .footer-social {
+    display: flex;
+    gap: 0.9rem;
+    order: 3;
+  }
+
+  .footer-social a { display: inline-flex; width: 15px; height: 15px; }
+  .footer-social svg { width: 100%; height: 100%; }
+
+  @media (min-width: 700px) {
+    .footer-copy { order: 2; }
+    .footer-links { order: 1; }
+    .footer-social { order: 3; }
+  }
 </style>
 </head>
 <body>
@@ -1837,75 +1931,63 @@
         <p class="eyebrow">COMO POSSO AJUDAR</p>
         <h2>Formas de trabalharmos juntos</h2>
       </div>
-      <div class="areas-list">
+      <div class="service-grid">
 
-        <div class="area-row reveal">
-          <span class="area-num">01</span>
-          <div>
-            <h3 style="text-transform:none;">Consultoria Estratégica</h3>
-            <p>Um diagnóstico claro do seu negócio e um plano de acção para crescer.</p>
-          </div>
-          <div style="display:flex; gap:0.7rem; align-self:center;">
+        <div class="service-card reveal">
+          <span class="service-icon"><i data-lucide="compass"></i></span>
+          <h3>Consultoria Estratégica</h3>
+          <p>Um diagnóstico claro do seu negócio e um plano de acção para crescer.</p>
+          <div class="service-actions">
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="tel:+258846283051" aria-label="Ligar sobre Consultoria Estratégica"><span class="icn"><i data-lucide="phone"></i></span></a>
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Consultoria%20Estratégica" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Consultoria Estratégica"><span class="icn"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span></a>
           </div>
         </div>
 
-        <div class="area-row reveal">
-          <span class="area-num">02</span>
-          <div>
-            <h3 style="text-transform:none;">Transformação Digital</h3>
-            <p>Resolvo o que trava o seu negócio online, do site às ferramentas do dia-a-dia.</p>
-          </div>
-          <div style="display:flex; gap:0.7rem; align-self:center;">
+        <div class="service-card reveal">
+          <span class="service-icon"><i data-lucide="cpu"></i></span>
+          <h3>Transformação Digital</h3>
+          <p>Resolvo o que trava o seu negócio online, do site às ferramentas do dia-a-dia.</p>
+          <div class="service-actions">
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="tel:+258846283051" aria-label="Ligar sobre Transformação Digital"><span class="icn"><i data-lucide="phone"></i></span></a>
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Transformação%20Digital" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Transformação Digital"><span class="icn"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span></a>
           </div>
         </div>
 
-        <div class="area-row reveal">
-          <span class="area-num">03</span>
-          <div>
-            <h3 style="text-transform:none;">Desenvolvimento de Pessoas</h3>
-            <p>Formação prática em tecnologia, do zero ao avançado.</p>
-          </div>
-          <div style="display:flex; gap:0.7rem; align-self:center;">
+        <div class="service-card reveal">
+          <span class="service-icon"><i data-lucide="graduation-cap"></i></span>
+          <h3>Desenvolvimento de Pessoas</h3>
+          <p>Formação prática em tecnologia, do zero ao avançado.</p>
+          <div class="service-actions">
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="tel:+258846283051" aria-label="Ligar sobre Desenvolvimento de Pessoas"><span class="icn"><i data-lucide="phone"></i></span></a>
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Desenvolvimento%20de%20Pessoas" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Desenvolvimento de Pessoas"><span class="icn"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span></a>
           </div>
         </div>
 
-        <div class="area-row reveal">
-          <span class="area-num">04</span>
-          <div>
-            <h3 style="text-transform:none;">Mentoria &amp; Estratégia de Carreira</h3>
-            <p>Acompanhamento próximo para destravar a sua carreira ou negócio.</p>
-          </div>
-          <div style="display:flex; gap:0.7rem; align-self:center;">
+        <div class="service-card reveal">
+          <span class="service-icon"><i data-lucide="trending-up"></i></span>
+          <h3>Mentoria &amp; Estratégia de Carreira</h3>
+          <p>Acompanhamento próximo para destravar a sua carreira ou negócio.</p>
+          <div class="service-actions">
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="tel:+258846283051" aria-label="Ligar sobre Mentoria e Estratégia de Carreira"><span class="icn"><i data-lucide="phone"></i></span></a>
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Mentoria%20%26%20Estratégia%20de%20Carreira" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Mentoria e Estratégia de Carreira"><span class="icn"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span></a>
           </div>
         </div>
 
-        <div class="area-row reveal">
-          <span class="area-num">05</span>
-          <div>
-            <h3 style="text-transform:none;">Estruturação de Projectos</h3>
-            <p>Workshops práticos para equipas que precisam de resultados rápidos.</p>
-          </div>
-          <div style="display:flex; gap:0.7rem; align-self:center;">
+        <div class="service-card reveal">
+          <span class="service-icon"><i data-lucide="clipboard-list"></i></span>
+          <h3>Estruturação de Projectos</h3>
+          <p>Workshops práticos para equipas que precisam de resultados rápidos.</p>
+          <div class="service-actions">
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="tel:+258846283051" aria-label="Ligar sobre Estruturação de Projectos"><span class="icn"><i data-lucide="phone"></i></span></a>
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Estruturação%20de%20Projectos" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Estruturação de Projectos"><span class="icn"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span></a>
           </div>
         </div>
 
-        <div class="area-row reveal">
-          <span class="area-num">06</span>
-          <div>
-            <h3 style="text-transform:none;">Resolução Estratégica de Problemas</h3>
-            <p>Analiso o problema e trago uma solução concreta, sem rodeios.</p>
-          </div>
-          <div style="display:flex; gap:0.7rem; align-self:center;">
+        <div class="service-card reveal">
+          <span class="service-icon"><i data-lucide="zap"></i></span>
+          <h3>Resolução Estratégica de Problemas</h3>
+          <p>Analiso o problema e trago uma solução concreta, sem rodeios.</p>
+          <div class="service-actions">
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="tel:+258846283051" aria-label="Ligar sobre Resolução Estratégica de Problemas"><span class="icn"><i data-lucide="phone"></i></span></a>
             <a class="presence-link" style="padding:0.5rem 0.7rem;" href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20quero%20saber%20mais%20sobre%20Resolução%20de%20Problemas" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp sobre Resolução Estratégica de Problemas"><span class="icn"><span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png')"></span></span></a>
           </div>
@@ -1950,8 +2032,27 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>© 2026 Fredson Muianga · Maputo, Moçambique</span>
-    <a href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer">Falar comigo →</a>
+    <nav class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#projectos">Projectos</a>
+      <a href="#networking">Networking</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <span class="footer-copy">© 2026 Fredson Muianga · Maputo, Moçambique</span>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/fredson-muianga-7495831ba" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/muianga.oficial?igsi=bmZqZWptcHN6ZHR2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1B5XpVw2Yw/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 1.926-.287 1.741h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 6.135 4.604 11.194 10.101 11.647Z"/></svg>
+      </a>
+      <a href="https://wa.me/258846283051?text=Olá%20Fredson%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <span class="icon-img" style="--icon-src: url('assets/whatsapp-icon.png');"></span>
+      </a>
+    </div>
   </div>
 </footer>
 

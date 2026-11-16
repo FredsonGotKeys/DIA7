@@ -115,6 +115,7 @@ def construir_meta_tags(site_url: str, image_url: str) -> str:
         f'<meta property="og:image" content="{image_url}">\n'
         '<meta property="og:image:width" content="1200">\n'
         '<meta property="og:image:height" content="630">\n'
+        f'<meta property="og:image:alt" content="{OG_TITLE}">\n'
         f'<meta property="og:url" content="{site_url}">\n'
         '<meta property="og:locale" content="pt_MZ">\n'
         '<meta property="og:site_name" content="Fredson Muianga">\n\n'
@@ -184,14 +185,14 @@ def gerar_og_image_html(site_url: str) -> None:
 <title>OG Image — Fredson Muianga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   html, body {{
     width: 1200px;
     height: 630px;
-    background: #0D0D0D;
-    font-family: 'DM Sans', sans-serif;
+    background: #111318;
+    font-family: 'Inter', sans-serif;
     overflow: hidden;
   }}
   .stage {{
@@ -209,23 +210,23 @@ def gerar_og_image_html(site_url: str) -> None:
     border-radius: 6px;
     object-fit: cover;
     object-position: top center;
-    border: 1px solid #BBA573;
+    border: 1px solid #B69A65;
     filter: grayscale(0.1) contrast(1.05) saturate(1.1);
   }}
   .photo-fallback {{
-    background: #1A1A1A;
+    background: #1A1C22;
     color: #F6F5F1;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
     font-size: 4.2rem;
   }}
   .text {{ min-width: 0; }}
   h1 {{
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
     font-size: 3.6rem;
     line-height: 1.1;
     letter-spacing: 0.5px;
@@ -233,18 +234,18 @@ def gerar_og_image_html(site_url: str) -> None:
     margin-bottom: 18px;
   }}
   p.tagline {{
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Serif Display', serif;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.55rem;
-    color: #BBA573;
+    color: #B69A65;
     margin-bottom: 28px;
   }}
   p.footer {{
     font-size: 1.05rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #8B8678;
+    color: #777777;
     font-weight: 500;
   }}
 </style>
